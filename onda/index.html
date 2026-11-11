@@ -57,6 +57,12 @@ p{margin:0}
 .hero p.lead{font-size:clamp(18px,1.6vw,21px);color:#D2D2D7;max-width:520px}
 .hero .row{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 
+@media (max-width:700px){
+  .hero{flex-direction:column;align-items:stretch;min-height:0}
+  .hero img{position:relative;height:56vh;min-height:340px;object-position:62% 55%}
+  .hero::after{display:none}
+  .hero .wrap{padding-top:28px;padding-bottom:56px}
+}
 section{padding:120px 0}
 @media (max-width:700px){section{padding:80px 0}}
 .center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
