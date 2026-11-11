@@ -99,7 +99,7 @@ header.h{background:var(--linen);border-bottom:1px solid var(--line);position:st
 .toggle input::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .15s}
 .toggle input:checked{background:var(--choc)}
 .toggle input:checked::after{transform:translateX(18px)}
-.fclose,.fapply{display:none}
+.fclose,.fapply,.shade{display:none}
 @media (max-width:980px){
   .filters{position:fixed;inset:0 auto 0 0;width:min(360px,92vw);max-height:none;height:100%;border-radius:0 var(--r) var(--r) 0;z-index:60;transform:translateX(-105%);transition:transform .2s;padding-top:16px}
   .filters.open{transform:none}
@@ -241,8 +241,6 @@ footer a:hover{text-decoration:underline}
       <div class="fgroup"><label class="toggle">Только в наличии<input type="checkbox" id="stock"></label></div>
       <button class="btn btn-dark fapply" id="fapply">Показать</button>
     </aside>
-    <div class="shade" id="shade"></div>
-
     <section aria-label="Товары">
       <div class="tools">
         <div class="tools-l">
@@ -297,6 +295,7 @@ footer a:hover{text-decoration:underline}
     <div class="flegal"><span>ООО «[НАЗВАНИЕ]» · ИНН [ИНН]</span><span>© 2026</span></div>
   </div>
 </footer>
+<div class="shade" id="shade"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
