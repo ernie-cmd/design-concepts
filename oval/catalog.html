@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Диваны и кресла — каталог ОВАЛ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Geologica:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<style>
+.crumbs{font-size:14px;color:var(--muted);padding:18px 0 8px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.ptitle{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+.ptitle span{color:var(--muted)}
+.chipnote{font-size:13px;color:var(--muted);background:var(--soft);border-radius:8px;padding:4px 10px}
+
+.subs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin-bottom:24px}
+@media (max-width:1100px){.subs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:560px){.subs{display:flex;overflow-x:auto;scrollbar-width:none}.sub{flex:0 0 110px}}
+.sub{border:1px solid var(--line);background:#fff;border-radius:var(--r);cursor:pointer;padding:10px 8px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:14px;font-weight:500;text-align:center;transition:border-color .15s}
+.sub .th{width:100%;aspect-ratio:8/7;border-radius:8px;overflow:hidden;background:#EEEAE4}
+.sub .th img{width:100%;height:100%;object-fit:cover}
+.sub small{color:var(--muted);font-weight:400;font-size:12px}
+.sub:hover{border-color:var(--choc)}
+.sub[aria-pressed="true"]{border-color:var(--choc);box-shadow:inset 0 0 0 1px var(--choc)}
+
+.layout{display:grid;grid-template-columns:272px minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:980px){.layout{grid-template-columns:minmax(0,1fr)}}
+.filters{position:sticky;top:132px;max-height:calc(100vh - 150px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:6px 18px 18px;scrollbar-width:thin}
+.fgroup{border-bottom:1px solid var(--line);padding:16px 0}
+.fgroup:last-of-type{border-bottom:0}
+.fgroup h3{margin:0 0 12px;font-size:15px;font-weight:600}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.num{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.num input{height:42px;border-radius:8px;border:1px solid var(--line);background:#fff;padding:0 12px;font-size:15px;color:var(--text);width:100%}
+.num input:focus{outline:2px solid var(--choc);outline-offset:0;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{min-height:36px;padding:0 12px;border-radius:8px;border:0;background:var(--soft);cursor:pointer;font-size:14px}
+.chip:hover{box-shadow:inset 0 0 0 1px var(--line)}
+.chip[aria-pressed="true"]{background:var(--choc);color:#fff;box-shadow:none}
+.mt{margin-top:10px}
+.check{display:flex;align-items:center;gap:10px;padding:6px 0;cursor:pointer;font-size:15px}
+.check input{width:18px;height:18px;accent-color:var(--choc);margin:0}
+.check small{margin-left:auto;color:var(--muted);font-size:13px}
+.dots{display:flex;flex-wrap:wrap;gap:10px}
+.dot{width:32px;height:32px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(43,29,22,.2)}
+.dot[aria-pressed="true"]{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--choc)}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-size:15px;font-weight:500}
+.toggle input{appearance:none;width:44px;height:26px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;margin:0;transition:background .15s}
+.toggle input::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .15s}
+.toggle input:checked{background:var(--choc)}
+.toggle input:checked::after{transform:translateX(18px)}
+.fclose,.fapply,.shade{display:none}
+@media (max-width:980px){
+  .filters{position:fixed;inset:0 auto 0 0;width:min(360px,92vw);max-height:none;height:100%;border-radius:0 var(--r) var(--r) 0;z-index:60;transform:translateX(-105%);transition:transform .2s;padding-top:16px}
+  .filters.open{transform:none}
+  .fclose{display:inline-flex;margin-left:auto}
+  .fapply{display:flex;position:sticky;bottom:0;margin-top:12px;width:100%}
+  .shade{position:fixed;inset:0;background:rgba(30,20,15,.4);z-index:55}
+  .shade.on{display:block}
+}
+.tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.tools-l{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fbtn{display:none}
+@media (max-width:980px){.fbtn{display:inline-flex}}
+.sel{position:relative}
+.sel select{appearance:none;height:44px;border-radius:10px;border:1px solid var(--line);background:#fff;padding:0 40px 0 16px;font-size:15px;cursor:pointer}
+.sel svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none}
+.active{display:flex;flex-wrap:wrap;gap:6px}
+.achip{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 8px 0 12px;border-radius:8px;border:0;background:var(--choc);color:#fff;font-size:13px;cursor:pointer}
+.achip span{font-size:16px;line-height:1;opacity:.8}
+.reset{border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;padding:6px 4px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (min-width:1300px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pcard{padding:8px 8px 12px}.price b{font-size:17px}}
+.promo{border-radius:var(--r);background:var(--choc);color:#fff;overflow:hidden;display:flex;flex-direction:column;text-decoration:none}
+.promo img{width:100%;aspect-ratio:8/7;object-fit:cover}
+.promo div{padding:16px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.promo b{font-size:18px;line-height:1.25}
+.promo span{color:#D9CDBF;font-size:14px}
+.promo .btn{margin-top:auto;align-self:flex-start}
+.empty{grid-column:1/-1;background:var(--soft);border-radius:var(--r);padding:40px;text-align:center}
+.more{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px}
+.more p{margin:0;font-size:14px;color:var(--muted)}
+.bar{width:220px;height:4px;border-radius:4px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--choc)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+.tags a{text-decoration:none;font-size:14px;padding:8px 14px;border-radius:8px;background:var(--soft)}
+.tags a:hover{box-shadow:inset 0 0 0 1px var(--line)}
+.seo{margin-top:36px;max-width:820px}
+.seo h2{margin-bottom:12px}
+.seo p{margin:0 0 10px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="city"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>[ГОРОД]</span>
+  <nav aria-label="Покупателям"><a href="index.html#showroom">Шоурум</a><a href="#">Доставка и сборка</a><a href="#">Оплата</a><a href="#">Гарантия</a><a href="#">Образцы тканей</a></nav>
+  <span>[ТЕЛЕФОН] · ежедневно [ЧАСЫ]</span>
+</div></div>
+
+<header class="h">
+  <div class="wrap">
+    <div class="hrow">
+      <a class="logo" href="index.html" aria-label="ОВАЛ — на главную">ОВАЛ</a>
+      <a class="btn btn-dark hcat" href="catalog.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12"/></svg>Каталог</a>
+      <label class="search"><span class="sr">Поиск по каталогу</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#6B5A4E" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+        <input type="search" placeholder="Поиск: диван букле, угловой, кресло…" id="q">
+      </label>
+      <nav class="hicons" aria-label="Личное">
+        <a class="hicon" href="index.html#showroom"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B1D16" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="l">Шоурум</span></a>
+        <a class="hicon" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B1D16" stroke-width="1.6" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span class="l">Избранное</span><span class="n" id="favN" hidden>0</span></a>
+        <a class="hicon" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B1D16" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16l-1.5 11a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="l">Корзина</span><span class="n" id="cartN" hidden>0</span></a>
+      </nav>
+    </div>
+    <nav class="mainnav" aria-label="Разделы" id="mainnav">
+      <a href="catalog.html?type=straight" data-t="straight">Прямые диваны</a><a href="catalog.html?type=corner" data-t="corner">Угловые</a><a href="catalog.html?type=modular" data-t="modular">Модульные</a><a href="catalog.html?type=bed" data-t="bed">Диваны-кровати</a><a href="catalog.html?type=chair" data-t="chair">Кресла</a><a href="catalog.html?type=pouf" data-t="pouf">Пуфы</a><a href="#">Столы</a><a href="#">Свет</a><a href="#">Образцы тканей</a><a class="sale" href="catalog.html?sort=sale">Акции</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumbs"><a href="index.html">Главная</a> / <a href="catalog.html">Мягкая мебель</a> / <span id="crumb">Диваны и кресла</span></div>
+  <div class="ptitle"><h1 id="h1">Диваны и кресла</h1><span id="count"></span><span class="chipnote">Концепт: товары и цены условные</span></div>
+
+  <div class="subs" id="subs" role="group" aria-label="Подкатегории"></div>
+
+  <div class="layout">
+    <aside class="filters" id="filters" aria-label="Фильтры">
+      <div style="display:flex;align-items:center"><button class="btn btn-line fclose" id="fclose" style="min-height:40px">Закрыть</button></div>
+      <div class="fgroup">
+        <h3>Цена, ₽</h3>
+        <div class="row2"><label class="num">от<input id="pmin" inputmode="numeric" placeholder="0"></label><label class="num">до<input id="pmax" inputmode="numeric" placeholder="250 000"></label></div>
+        <div class="chips mt" id="pchips"></div>
+      </div>
+      <div class="fgroup"><h3>Срок доставки</h3><div class="chips" id="dchips"></div></div>
+      <div class="fgroup"><h3>Ширина, см</h3><div class="chips" id="wchips"></div></div>
+      <div class="fgroup"><h3>Цвет обивки</h3><div class="dots" id="colors"></div></div>
+      <div class="fgroup"><h3>Материал обивки</h3><div id="mats"></div></div>
+      <div class="fgroup"><h3>Механизм</h3><div id="mechs"></div></div>
+      <div class="fgroup"><label class="toggle">Только в наличии<input type="checkbox" id="stock"></label></div>
+      <button class="btn btn-dark fapply" id="fapply">Показать</button>
+    </aside>
+
+    <section aria-label="Товары">
+      <div class="tools">
+        <div class="tools-l"><button class="btn btn-line fbtn" id="fopen">Фильтры<span id="fcount"></span></button><div class="active" id="active"></div></div>
+        <label class="sel"><span class="sr">Сортировка</span>
+          <select id="sort"><option value="pop">По популярности</option><option value="cheap">Сначала дешевле</option><option value="exp">Сначала дороже</option><option value="new">Новинки</option><option value="sale">По размеру скидки</option></select>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#2B1D16" stroke-width="1.6" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+        </label>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="more" id="more"></div>
+      <div class="tags" aria-label="Подборки"><a href="#">Диваны из букле</a><a href="#">Бархатные диваны</a><a href="#">Угловые с ящиком</a><a href="#">Диваны-кровати на каждый день</a><a href="#">Кресла для чтения</a><a href="#">Диваны до 200 см</a><a href="#">Терракотовые диваны</a></div>
+      <div class="seo">
+        <h2>Купить диван в ОВАЛ</h2>
+        <p>Большинство моделей шьём под заказ: можно выбрать ширину, ткань и цвет ножек. Образцы тканей пришлём домой, а в шоуруме можно посидеть на каждом диване.</p>
+        <p>Ширина диванов — [ОТ И ДО] см. Обивка: букле, бархат, рогожка, велюр, лён. Гарантия на каркас — [СРОК].</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="f">
+  <div class="wrap">
+    <div class="fcols">
+      <div><a class="logo" href="index.html" style="color:#F3ECE2;font-size:20px">ОВАЛ</a><p style="margin:10px 0 0;font-size:14px">Авторские диваны и мягкая мебель. Шоурум в [ГОРОД].</p></div>
+      <div><h4>Каталог</h4><ul><li><a href="catalog.html?type=straight">Прямые диваны</a></li><li><a href="catalog.html?type=corner">Угловые диваны</a></li><li><a href="catalog.html?type=modular">Модульные</a></li><li><a href="catalog.html?type=chair">Кресла</a></li></ul></div>
+      <div><h4>Покупателям</h4><ul><li><a href="#">Доставка и сборка</a></li><li><a href="#">Оплата</a></li><li><a href="#">Гарантия и возврат</a></li><li><a href="#">Образцы тканей</a></li></ul></div>
+      <div><h4>Контакты</h4><ul><li>[ТЕЛЕФОН]</li><li>[EMAIL]</li><li>[АДРЕС ШОУРУМА]</li></ul></div>
+    </div>
+    <div class="flegal"><span>ООО «[НАЗВАНИЕ]» · ИНН [ИНН] · Концепт: товары, цены и изображения условные</span><span>© 2026</span></div>
+  </div>
+</footer>
+<div class="shade" id="shade"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script>
+(function(){
+  var O = window.OVAL, P = O.P, COLORS = O.COLORS, TYPES = O.TYPES, MECH = O.MECH, MATS = O.MATS;
+  var $ = function(id){ return document.getElementById(id); }, esc = O.esc, rub = O.rub, plural = O.plural;
+  var SUBIMG = {straight:'straight_milk', corner:'corner_sand', modular:'modular_olive', bed:'bed_graph', chair:'chair_terra', pouf:'pouf_powder'};
+  var PR = [['до 40 тыс.',0,40000],['40–90 тыс.',40000,90000],['90–150 тыс.',90000,150000],['от 150 тыс.',150000,1e9]];
+  var DR = [['Завтра',1],['До 3 дней',3],['До 7 дней',7],['Любой',null]];
+  var WR = [['до 100',0,100],['100–200',100,200],['200–260',200,260],['от 260',260,1e4]];
+  function blank(){ return {type:null,pmin:null,pmax:null,pr:null,days:null,wr:null,colors:[],mats:[],mechs:[],stock:false,q:'',sort:'pop',shown:12}; }
+  var S = blank();
+  var u = new URLSearchParams(location.search);
+  if (TYPES[u.get('type')]) S.type = u.get('type');
+  if (u.get('q')) { S.q = u.get('q').toLowerCase(); $('q').value = u.get('q'); }
+  if (u.get('sort')) { S.sort = u.get('sort'); $('sort').value = S.sort; }
+
+  function match(p, skip){
+    if (skip!=='type' && S.type && p.type!==S.type) return false;
+    if (S.q && (p.name+' '+p.mat+' '+TYPES[p.type]).toLowerCase().indexOf(S.q) < 0) return false;
+    var lo = S.pmin!=null ? S.pmin : (S.pr ? S.pr[1] : null), hi = S.pmax!=null ? S.pmax : (S.pr ? S.pr[2] : null);
+    if (lo!=null && p.price<lo) return false;
+    if (hi!=null && p.price>hi) return false;
+    if (S.days && p.days>S.days) return false;
+    if (S.wr && (p.w<S.wr[1] || p.w>=S.wr[2])) return false;
+    if (S.colors.length && !p.cols.some(function(c){ return S.colors.indexOf(c) > -1; })) return false;
+    if (S.mats.length && S.mats.indexOf(p.mat) < 0) return false;
+    if (S.mechs.length && S.mechs.indexOf(p.mech) < 0) return false;
+    if (S.stock && !p.stock) return false;
+    return true;
+  }
+  function sorted(list){
+    var f = {pop:function(a,b){return b.pop-a.pop;}, cheap:function(a,b){return a.price-b.price;}, exp:function(a,b){return b.price-a.price;},
+      'new':function(a,b){return (b.isNew-a.isNew)||(b.pop-a.pop);}, sale:function(a,b){return b.sale-a.sale;}}[S.sort] || function(){return 0;};
+    return list.slice().sort(f);
+  }
+  var PROMO = '<a class="promo" href="#"><img src="img/g_m7_swatches.jpg" alt="Образцы тканей: букле, бархат, лён" loading="lazy"><div><b>Образцы тканей на дом</b><span>До 5 образцов, чтобы выбрать цвет вживую</span><span class="btn btn-accent">Заказать образцы</span></div></a>';
+
+  function renderSubs(){
+    var h = '<button class="sub" data-type="" aria-pressed="'+(!S.type)+'"><span class="th"><img src="img/p/corner_choc.jpg" alt=""></span>Все<small>'+P.filter(function(p){return match(p,'type');}).length+'</small></button>';
+    Object.keys(TYPES).forEach(function(k){
+      var n = P.filter(function(p){ return p.type===k && match(p,'type'); }).length;
+      h += '<button class="sub" data-type="'+k+'" aria-pressed="'+(S.type===k)+'"><span class="th"><img src="img/p/'+SUBIMG[k]+'.jpg" alt=""></span>'+TYPES[k]+'<small>'+n+'</small></button>';
+    });
+    $('subs').innerHTML = h;
+  }
+  function chipRow(el, arr, cur, key){ $(el).innerHTML = arr.map(function(a,i){ return '<button class="chip" data-'+key+'="'+i+'" aria-pressed="'+(cur===i)+'">'+a[0]+'</button>'; }).join(''); }
+  function renderFilters(){
+    chipRow('pchips', PR, S.pr ? PR.indexOf(S.pr) : -1, 'pr');
+    chipRow('dchips', DR, S.days==null ? 3 : DR.findIndex(function(d){ return d[1]===S.days; }), 'dr');
+    chipRow('wchips', WR, S.wr ? WR.indexOf(S.wr) : -1, 'wr');
+    $('colors').innerHTML = Object.keys(COLORS).map(function(k){ return '<button class="dot" data-color="'+k+'" aria-pressed="'+(S.colors.indexOf(k)>-1)+'" aria-label="'+COLORS[k].n+'" title="'+COLORS[k].n+'" style="background:'+COLORS[k].h+'"></button>'; }).join('');
+    $('mats').innerHTML = MATS.map(function(m){ var n = P.filter(function(p){ return p.mat===m; }).length; return '<label class="check"><input type="checkbox" data-mat="'+m+'"'+(S.mats.indexOf(m)>-1?' checked':'')+'>'+m+'<small>'+n+'</small></label>'; }).join('');
+    $('mechs').innerHTML = Object.keys(MECH).map(function(k){ var n = P.filter(function(p){ return p.mech===k; }).length; return '<label class="check"><input type="checkbox" data-mech="'+k+'"'+(S.mechs.indexOf(k)>-1?' checked':'')+'>'+MECH[k]+'<small>'+n+'</small></label>'; }).join('');
+  }
+  function renderActive(){
+    var a = [];
+    if (S.type) a.push(['type', TYPES[S.type]]);
+    if (S.pmin!=null || S.pmax!=null) a.push(['pnum', (S.pmin!=null ? 'от '+rub(S.pmin) : '') + (S.pmax!=null ? ' до '+rub(S.pmax) : '')]);
+    if (S.pr) a.push(['pr', S.pr[0]]);
+    if (S.days) a.push(['days', DR.find(function(d){ return d[1]===S.days; })[0]]);
+    if (S.wr) a.push(['wr', 'Ширина '+S.wr[0]+' см']);
+    S.colors.forEach(function(c){ a.push(['color:'+c, COLORS[c].n]); });
+    S.mats.forEach(function(m){ a.push(['mat:'+m, m]); });
+    S.mechs.forEach(function(m){ a.push(['mech:'+m, MECH[m]]); });
+    if (S.stock) a.push(['stock', 'В наличии']);
+    if (S.q) a.push(['q', '«'+S.q+'»']);
+    $('active').innerHTML = a.map(function(x){ return '<button class="achip" data-rm="'+esc(x[0])+'" aria-label="Убрать фильтр '+esc(x[1])+'">'+esc(x[1])+'<span aria-hidden="true">×</span></button>'; }).join('') + (a.length ? '<button class="reset" data-reset>Сбросить всё</button>' : '');
+    $('fcount').textContent = a.length ? ' · '+a.length : '';
+  }
+  function render(){
+    var list = sorted(P.filter(function(p){ return match(p); })), n = list.length;
+    var title = S.type ? TYPES[S.type] : 'Диваны и кресла';
+    $('h1').textContent = title; $('crumb').textContent = title; document.title = title + ' — каталог ОВАЛ';
+    document.querySelectorAll('#mainnav a[data-t]').forEach(function(a){ a.classList.toggle('on', a.dataset.t===S.type); });
+    $('count').textContent = n+' '+plural(n,['товар','товара','товаров']);
+    $('fapply').textContent = 'Показать '+n+' '+plural(n,['товар','товара','товаров']);
+    var shown = list.slice(0, S.shown), h = shown.map(O.card);
+    if (h.length > 6) h.splice(6, 0, PROMO);
+    $('grid').innerHTML = n ? h.join('') : '<div class="empty"><p style="margin:0 0 14px;font-weight:600">Ничего не нашлось</p><p class="muted" style="margin:0 0 18px">Попробуйте убрать часть фильтров.</p><button class="btn btn-dark" data-reset>Сбросить фильтры</button></div>';
+    var left = n - shown.length;
+    $('more').innerHTML = n ? '<div class="bar" aria-hidden="true"><i style="width:'+Math.round(shown.length/n*100)+'%"></i></div><p>Показано '+shown.length+' из '+n+'</p>' + (left > 0 ? '<button class="btn btn-line" data-more>Показать ещё '+Math.min(12,left)+'</button>' : '') : '';
+    renderSubs(); renderActive();
+  }
+  function full(){ renderFilters(); render(); }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('button'); if (!t) return;
+    if (t.hasAttribute('data-type')){ S.type = t.getAttribute('data-type') || null; S.shown = 12; full(); }
+    else if (t.hasAttribute('data-pr')){ var i = +t.getAttribute('data-pr'); S.pr = (S.pr===PR[i]) ? null : PR[i]; S.pmin = S.pmax = null; $('pmin').value = $('pmax').value = ''; S.shown = 12; full(); }
+    else if (t.hasAttribute('data-dr')){ S.days = DR[+t.getAttribute('data-dr')][1]; S.shown = 12; full(); }
+    else if (t.hasAttribute('data-wr')){ var j = +t.getAttribute('data-wr'); S.wr = (S.wr===WR[j]) ? null : WR[j]; S.shown = 12; full(); }
+    else if (t.hasAttribute('data-color')){ var c = t.getAttribute('data-color'), k = S.colors.indexOf(c); if (k > -1) S.colors.splice(k,1); else S.colors.push(c); S.shown = 12; full(); }
+    else if (t.hasAttribute('data-more')){ S.shown += 12; render(); }
+    else if (t.hasAttribute('data-reset')){ var so = S.sort; S = blank(); S.sort = so; $('pmin').value = $('pmax').value = $('q').value = ''; $('stock').checked = false; full(); }
+    else if (t.hasAttribute('data-rm')){
+      var r = t.getAttribute('data-rm');
+      if (r==='type') S.type = null; else if (r==='pnum'){ S.pmin = S.pmax = null; $('pmin').value = $('pmax').value = ''; }
+      else if (r==='pr') S.pr = null; else if (r==='days') S.days = null; else if (r==='wr') S.wr = null;
+      else if (r==='stock'){ S.stock = false; $('stock').checked = false; } else if (r==='q'){ S.q = ''; $('q').value = ''; }
+      else { var p = r.split(':'), arr = {color:S.colors, mat:S.mats, mech:S.mechs}[p[0]]; arr.splice(arr.indexOf(p[1]),1); }
+      full();
+    }
+  });
+  document.addEventListener('change', function(e){
+    var t = e.target;
+    if (t.hasAttribute('data-mat')){ var m = t.getAttribute('data-mat'); if (t.checked) S.mats.push(m); else S.mats.splice(S.mats.indexOf(m),1); S.shown = 12; render(); }
+    else if (t.hasAttribute('data-mech')){ var k = t.getAttribute('data-mech'); if (t.checked) S.mechs.push(k); else S.mechs.splice(S.mechs.indexOf(k),1); S.shown = 12; render(); }
+    else if (t.id==='stock'){ S.stock = t.checked; S.shown = 12; render(); }
+    else if (t.id==='sort'){ S.sort = t.value; render(); }
+  });
+  function num(v){ v = String(v).replace(/\D/g,''); return v ? +v : null; }
+  ['pmin','pmax'].forEach(function(id){ $(id).addEventListener('input', function(){ S[id] = num(this.value); S.pr = null; S.shown = 12; renderFilters(); render(); }); });
+  var qt; $('q').addEventListener('input', function(){ var v = this.value.trim().toLowerCase(); clearTimeout(qt); qt = setTimeout(function(){ S.q = v; S.shown = 12; render(); }, 200); });
+  function openF(o){ $('filters').classList.toggle('open', o); $('shade').classList.toggle('on', o); document.body.style.overflow = o ? 'hidden' : ''; }
+  $('fopen').addEventListener('click', function(){ openF(true); });
+  $('fclose').addEventListener('click', function(){ openF(false); });
+  $('fapply').addEventListener('click', function(){ openF(false); });
+  $('shade').addEventListener('click', function(){ openF(false); });
+  document.addEventListener('keydown', function(e){ if (e.key==='Escape') openF(false); });
+  full(); O.badges();
+})();
+</script>
+</body>
+</html>
