@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Сальдо — мудборд, стиль и структура</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#DCE3DD}
+a{color:#2E3A9E}a:hover{color:#1C2124}
+</style>
+</head>
+<body>
+<div class="boards" style="display: flex; flex-direction: column; gap: 48px; padding: 48px 0; align-items: center">
+<div style="width: 1840px; height: 1200px; box-sizing: border-box; padding: 52px 56px 56px; background: #F3F1E8; color: #1C2124; font-family: 'Golos Text', system-ui, sans-serif; display: flex; flex-direction: column; gap: 24px">
+
+  <div style="display: flex; flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 18px; border-bottom: 2px solid #1F4D3A">
+    <div style="display: flex; flex-direction: row; align-items: flex-end; gap: 28px">
+      <h1 style="margin: 0; font-weight: 800; font-size: 76px; line-height: 0.85; letter-spacing: -0.04em; color: #1F4D3A">Сальдо</h1>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">
+        <span>Мудборд · сайт бухгалтерских услуг</span>
+        <span style="color: #4E5A55">Рабочее название</span>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 10px; padding-bottom: 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase">
+      <span style="padding: 6px 10px; border: 1px solid #1C2124">Порядок</span>
+      <span style="padding: 6px 10px; border: 1px solid #1C2124">Прозрачность</span>
+      <span style="padding: 6px 10px; border: 1px solid #1C2124">Спокойствие</span>
+      <span style="padding: 6px 10px; background: #F5E663; border: 1px solid #1C2124">В срок</span>
+    </div>
+  </div>
+
+  <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(0, 1fr)); gap: 16px">
+
+    <figure style="margin: 0; grid-column: 1 / span 6; grid-row: 1 / span 5; position: relative; overflow: hidden; background: #1F4D3A">
+      <img src="img/ledger.jpg" alt="Лист бухгалтерской книги с зелёной разлиновкой, суммами и строками, выделенными жёлтым маркером" style="width: 100%; height: 100%; object-fit: cover; display: block">
+      <span style="position: absolute; top: 14px; left: 14px; background: #F3F1E8; border: 1px solid #1C2124; padding: 5px 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">01 / Ледгер</span>
+    </figure>
+
+    <figure style="margin: 0; grid-column: 7 / span 6; grid-row: 1 / span 4; position: relative; overflow: hidden; background: #E9E4D8">
+      <img src="img/binders.jpg" alt="Папки-регистраторы с подписями УСН, НДС, Зарплата, Кадры на полке" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block">
+      <span style="position: absolute; top: 14px; left: 14px; background: #F3F1E8; border: 1px solid #1C2124; padding: 5px 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">02 / Всё по папкам</span>
+    </figure>
+
+    <figure style="margin: 0; grid-column: 7 / span 4; grid-row: 5 / span 4; position: relative; overflow: hidden; background: #DCE8DF">
+      <img src="img/abacus.jpg" alt="Деревянные счёты с белыми и зелёными костяшками на мятном фоне" style="width: 100%; height: 100%; object-fit: cover; display: block">
+      <span style="position: absolute; top: 14px; left: 14px; background: #F3F1E8; border: 1px solid #1C2124; padding: 5px 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">04 / Счёт</span>
+    </figure>
+
+    <figure style="margin: 0; grid-column: 11 / span 2; grid-row: 5 / span 4; position: relative; overflow: hidden; background: #F4F2EA">
+      <img src="img/stamp.jpg" alt="Синяя круглая печать «Проверено» на документе" style="width: 100%; height: 100%; object-fit: cover; object-position: 60% 58%; display: block">
+      <span style="position: absolute; top: 14px; left: 14px; background: #F3F1E8; border: 1px solid #1C2124; padding: 5px 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">05 / Печать</span>
+    </figure>
+
+    <figure style="margin: 0; grid-column: 1 / span 2; grid-row: 6 / span 3; position: relative; overflow: hidden; background: #1F4D3A">
+      <img src="img/tape.jpg" alt="Лента калькулятора с колонкой сумм и выделенным итогом" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block">
+      <span style="position: absolute; top: 14px; left: 14px; background: #F3F1E8; border: 1px solid #1C2124; padding: 5px 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">03 / Итог</span>
+    </figure>
+
+    <div style="grid-column: 3 / span 4; grid-row: 6 / span 3; background: #1F4D3A; color: #F3F1E8; padding: 28px 30px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 16px">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #CFE0D4">06 / Голос бренда</span>
+      <p style="margin: 0; font-weight: 700; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em">Отчётность сдана.<br>А вы <mark style="background: #F5E663; color: #1C2124; padding: 0 8px">спокойны</mark>.</p>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 16px; border-top: 1px solid #5E8571; padding-top: 14px">
+        <span style="font-size: 15px; line-height: 1.4; color: #E3ECE5; max-width: 300px">Аккуратный ледгер, а не холодный банк. Цифры — моноширинным, главное — маркером.</span>
+        <div aria-hidden="true" style="display: flex; flex-direction: row; gap: 6px">
+          <span style="width: 22px; height: 22px; background: #F3F1E8"></span>
+          <span style="width: 22px; height: 22px; background: #DCE8DF"></span>
+          <span style="width: 22px; height: 22px; background: #F5E663"></span>
+          <span style="width: 22px; height: 22px; background: #2E3A9E; outline: 1px solid #F3F1E8"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="width: 1840px; height: 1100px; box-sizing: border-box; padding: 52px 56px 56px; background: #F3F1E8; color: #1C2124; font-family: 'Golos Text', system-ui, sans-serif; display: flex; flex-direction: column; gap: 32px">
+
+  <div style="display: flex; flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 16px; border-bottom: 2px solid #1F4D3A">
+    <h1 style="margin: 0; font-weight: 800; font-size: 48px; line-height: 0.9; letter-spacing: -0.03em; color: #1F4D3A">Сальдо <span style="font-weight: 500; color: #1C2124">— стиль</span></h1>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">Цвет · Шрифт · Элементы · Правила</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; height: 330px">
+    <section style="grid-column: 1 / span 7; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">01 / Палитра</h2>
+      <div style="flex: 1; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0; border: 1px solid #1C2124">
+        <div style="background: #1F4D3A; color: #F3F1E8; padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid #1C2124"><span style="font-weight: 700; font-size: 18px">Ледгер</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5">Основной<br>1F4D3A</span></div>
+        <div style="background: #DCE8DF; padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid #1C2124"><span style="font-weight: 700; font-size: 18px">Мята</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5">Фон секций<br>DCE8DF</span></div>
+        <div style="background: #F3F1E8; padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid #1C2124"><span style="font-weight: 700; font-size: 18px">Бумага</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5">Фон<br>F3F1E8</span></div>
+        <div style="background: #1C2124; color: #F3F1E8; padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid #1C2124"><span style="font-weight: 700; font-size: 18px">Графит</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5">Текст<br>1C2124</span></div>
+        <div style="background: #F5E663; padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid #1C2124"><span style="font-weight: 700; font-size: 18px">Маркер</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5">Главное, ≤ 5%<br>F5E663</span></div>
+        <div style="background: #2E3A9E; color: #FFFFFF; padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid #1C2124"><span style="font-weight: 700; font-size: 18px">Печать</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5">Ссылки, доверие<br>2E3A9E</span></div>
+        <div style="background: #B0352A; color: #FFFFFF; padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-weight: 700; font-size: 18px">Красная графа</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5">Только ошибки<br>B0352A</span></div>
+      </div>
+    </section>
+
+    <section style="grid-column: 8 / span 5; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">02 / Шрифты</h2>
+      <div style="flex: 1; display: flex; flex-direction: column; border-top: 1px solid #1F4D3A">
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid #1F4D3A"><span style="font-weight: 800; font-size: 40px; line-height: 1.05; letter-spacing: -0.03em">Без сюрпризов</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-align: right">Golos Text 800<br>Заголовки</span></div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid #1F4D3A"><span style="font-size: 17px; line-height: 1.45; max-width: 380px">Ведём учёт, сдаём отчёты и отвечаем на вопросы простым языком.</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-align: right">Golos Text 400<br>Текст 17 / 1.45</span></div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid #1F4D3A"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 34px; letter-spacing: -0.02em">1 171 630,00 ₽</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-align: right">JetBrains Mono<br>Цифры, суммы</span></div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">Услуга 01 / Для ООО</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-align: right">Mono капс<br>Метки</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px">
+    <section style="grid-column: 1 / span 9; display: flex; flex-direction: column; gap: 12px; min-height: 0">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">03 / Элементы</h2>
+      <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+        <article style="border: 1px solid #1C2124; background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F4D3A">Услуга 01</span>
+          <h3 style="margin: 0; font-weight: 700; font-size: 26px; line-height: 1.1">Бухучёт для ООО</h3>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0; border-top: 1px solid #9FC3A8">
+            <li style="display: flex; flex-direction: row; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#1F4D3A" stroke-width="2"><path d="M2 8.5l4 4 8-9"></path></svg>Первичка и проводки</li>
+            <li style="display: flex; flex-direction: row; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#1F4D3A" stroke-width="2"><path d="M2 8.5l4 4 8-9"></path></svg>Отчётность в ФНС и СФР</li>
+            <li style="display: flex; flex-direction: row; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#1F4D3A" stroke-width="2"><path d="M2 8.5l4 4 8-9"></path></svg>Ответы на вопросы в чате</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: baseline"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 22px">от [ЦЕНА] ₽</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px">/ месяц</span></div>
+          <a href="#calc" style="text-decoration: none; background: #1F4D3A; color: #F3F1E8; min-height: 48px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px">Получить расчёт</a>
+        </article>
+
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px">
+            <a href="#calc" style="text-decoration: none; background: #1F4D3A; color: #F3F1E8; min-height: 48px; padding: 0 22px; display: inline-flex; align-items: center; font-weight: 600; font-size: 15px">Получить расчёт</a>
+            <a href="#price" style="text-decoration: none; border: 1px solid #1C2124; color: #1C2124; min-height: 48px; box-sizing: border-box; padding: 0 22px; display: inline-flex; align-items: center; font-weight: 600; font-size: 15px">Тарифы</a>
+          </div>
+          <a href="#how" style="font-weight: 600; font-size: 15px; text-underline-offset: 4px">Как мы работаем →</a>
+          <div style="background: #F5E663; border: 1px solid #1C2124; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">Ближайший срок</span>
+            <span style="font-weight: 600; font-size: 16px">[ДАТА] — декларация по УСН</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <label for="sk-phone" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">Телефон</label>
+            <input id="sk-phone" type="tel" placeholder="+7 (___) ___-__-__" style="height: 48px; box-sizing: border-box; padding: 0 14px; border: 1px solid #1C2124; border-radius: 0; background: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #1C2124">
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="border-top: 2px solid #1F4D3A; display: flex; flex-direction: column">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px"><span>Нулевая отчётность</span><span style="font-family: 'JetBrains Mono', monospace">от [ЦЕНА] ₽</span></div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px"><span>ИП на УСН</span><span style="font-family: 'JetBrains Mono', monospace">от [ЦЕНА] ₽</span></div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px"><span>ООО на ОСНО</span><span style="font-family: 'JetBrains Mono', monospace">от [ЦЕНА] ₽</span></div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 12px; padding: 10px 0; font-size: 15px"><span>Восстановление учёта</span><span style="font-family: 'JetBrains Mono', monospace">по оценке</span></div>
+          </div>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 16px">
+            <div style="width: 92px; height: 92px; flex: none; border-radius: 50%; border: 3px solid #2E3A9E; box-sizing: border-box; display: flex; align-items: center; justify-content: center; transform: rotate(-10deg)">
+              <div style="width: 70px; height: 70px; border-radius: 50%; border: 1.5px solid #2E3A9E; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px; letter-spacing: 0.04em; color: #2E3A9E">ПРОВЕРЕНО</div>
+            </div>
+            <span style="font-size: 14px; line-height: 1.4">Печать — значок доверия: «сдано», «проверено», «без штрафов».</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="grid-column: 10 / span 3; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">04 / Правила</h2>
+      <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 2px solid #1F4D3A">
+        <li style="display: flex; flex-direction: row; gap: 12px; padding: 11px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px; line-height: 1.4"><span style="font-family: 'JetBrains Mono', monospace; color: #1F4D3A">01</span><span>Цифры — моноширинным, разряды через пробел.</span></li>
+        <li style="display: flex; flex-direction: row; gap: 12px; padding: 11px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px; line-height: 1.4"><span style="font-family: 'JetBrains Mono', monospace; color: #1F4D3A">02</span><span>Маркер — одно главное на экран, не больше.</span></li>
+        <li style="display: flex; flex-direction: row; gap: 12px; padding: 11px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px; line-height: 1.4"><span style="font-family: 'JetBrains Mono', monospace; color: #1F4D3A">03</span><span>Разлиновка вместо теней: тонкие зелёные линии.</span></li>
+        <li style="display: flex; flex-direction: row; gap: 12px; padding: 11px 0; border-bottom: 1px solid #9FC3A8; font-size: 15px; line-height: 1.4"><span style="font-family: 'JetBrains Mono', monospace; color: #1F4D3A">04</span><span>Фото — предметы учёта крупно, без стоковых людей в костюмах.</span></li>
+        <li style="display: flex; flex-direction: row; gap: 12px; padding: 11px 0; font-size: 15px; line-height: 1.4"><span style="font-family: 'JetBrains Mono', monospace; color: #1F4D3A">05</span><span>Говорим по-человечески, без канцелярита.</span></li>
+      </ol>
+    </section>
+  </div>
+</div>
+<div style="width: 1840px; height: 860px; box-sizing: border-box; padding: 52px 56px 56px; background: #F3F1E8; color: #1C2124; font-family: 'Golos Text', system-ui, sans-serif; display: flex; flex-direction: column; gap: 24px">
+
+  <div style="display: flex; flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 16px; border-bottom: 2px solid #1F4D3A">
+    <h1 style="margin: 0; font-weight: 800; font-size: 48px; line-height: 0.9; letter-spacing: -0.03em; color: #1F4D3A">Структура сайта <span style="font-weight: 500; color: #1C2124">— 10 страниц</span></h1>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">Концепт рисуем только для главной</span>
+  </div>
+
+  <div style="background: #1F4D3A; color: #F3F1E8; padding: 18px 24px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 24px">
+    <div style="display: flex; flex-direction: row; align-items: baseline; gap: 18px">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px">01</span>
+      <span style="font-weight: 700; font-size: 30px">Главная</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #CFE0D4">/</span>
+    </div>
+    <span style="font-size: 15px; color: #E3ECE5">Первый экран · услуги · как работаем · тарифы-коротко · отзывы · сроки · заявка</span>
+    <span style="background: #F5E663; color: #1C2124; padding: 6px 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">Следующий шаг</span>
+  </div>
+
+  <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px">
+
+    <section style="grid-column: 1 / span 6; display: flex; flex-direction: column; gap: 14px; border-top: 3px solid #1F4D3A; padding-top: 14px">
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline">
+        <h2 style="margin: 0; font-weight: 700; font-size: 26px"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 14px; color: #1F4D3A; margin-right: 10px">02</span>Услуги</h2>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">/uslugi</span>
+      </div>
+      <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 12px">
+        <article style="border: 1px solid #1C2124; background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1F4D3A">03</span><h3 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.15">Бухучёт для ООО</h3><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">/uslugi/ooo</span></article>
+        <article style="border: 1px solid #1C2124; background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1F4D3A">04</span><h3 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.15">Бухучёт для ИП</h3><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">/uslugi/ip</span></article>
+        <article style="border: 1px solid #1C2124; background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1F4D3A">05</span><h3 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.15">Зарплата и кадры</h3><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">/uslugi/zarplata</span></article>
+        <article style="border: 1px solid #1C2124; background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1F4D3A">06</span><h3 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.15">Отчётность и налоги</h3><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">/uslugi/otchetnost</span></article>
+        <article style="border: 1px solid #1C2124; background: #FFFFFF; padding: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1F4D3A">07</span><h3 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.15">Восстановление учёта</h3><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">/uslugi/vosstanovlenie</span></article>
+        <div style="background: #DCE8DF; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F4D3A">Шаблон страницы услуги</span>
+          <span style="font-size: 14px; line-height: 1.45">Кому подходит → что делаем → цена → сроки → вопросы → заявка</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="grid-column: 7 / span 2; display: flex; flex-direction: column; gap: 10px; border-top: 3px solid #1F4D3A; padding-top: 14px">
+      <h2 style="margin: 0; font-weight: 700; font-size: 26px"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 14px; color: #1F4D3A; margin-right: 10px">08</span>Цены</h2>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">/ceny</span>
+      <ul style="margin: 8px 0 0; padding: 0; list-style: none; border-top: 1px solid #9FC3A8; font-size: 15px; line-height: 1.4">
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Тарифы ИП и ООО</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Калькулятор стоимости</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Разовые услуги</li>
+      </ul>
+    </section>
+
+    <section style="grid-column: 9 / span 2; display: flex; flex-direction: column; gap: 10px; border-top: 3px solid #1F4D3A; padding-top: 14px">
+      <h2 style="margin: 0; font-weight: 700; font-size: 26px"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 14px; color: #1F4D3A; margin-right: 10px">09</span>О компании</h2>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">/o-kompanii</span>
+      <ul style="margin: 8px 0 0; padding: 0; list-style: none; border-top: 1px solid #9FC3A8; font-size: 15px; line-height: 1.4">
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Команда и опыт</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Ответственность и договор</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Отзывы клиентов</li>
+      </ul>
+    </section>
+
+    <section style="grid-column: 11 / span 2; display: flex; flex-direction: column; gap: 10px; border-top: 3px solid #1F4D3A; padding-top: 14px">
+      <h2 style="margin: 0; font-weight: 700; font-size: 26px"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 14px; color: #1F4D3A; margin-right: 10px">10</span>Контакты</h2>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">/kontakty</span>
+      <ul style="margin: 8px 0 0; padding: 0; list-style: none; border-top: 1px solid #9FC3A8; font-size: 15px; line-height: 1.4">
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Телефон, мессенджеры</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Адрес и карта</li>
+        <li style="padding: 8px 0; border-bottom: 1px solid #9FC3A8">Форма заявки</li>
+      </ul>
+    </section>
+  </div>
+</div>
+</div>
+<script>
+// Мудборд нарисован в ширину 1840 px — на узком экране уменьшаем целиком
+(function(){function f(){var z=Math.min(1,innerWidth/1840);document.querySelector('.boards').style.zoom=z;}addEventListener('resize',f);f();})();
+</script>
+</body>
+</html>

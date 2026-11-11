@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Концепты сайтов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Разводящая: превью трёх концептов, у каждого — сайт и мудборд */
+:root{--bg:#F2F2F0;--card:#FFFFFF;--ink:#111111;--muted:#5E5E5E;--line:#E2E2DE;--font:'Onest','Helvetica Neue',Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 var(--font)}
+main{max-width:1280px;margin:0 auto;padding-block:clamp(24px,4vw,56px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{margin:0 0 8px;font:600 clamp(26px,3vw,40px)/1.1 var(--font);letter-spacing:-0.03em}
+.sub{margin:0 0 clamp(24px,3vw,40px);color:var(--muted);max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.c{display:flex;flex-direction:column;min-width:0;background:var(--card);border-top:3px solid var(--ink)}
+.c:hover{border-top-color:var(--accent,#111)}
+.shot{position:relative;display:block;aspect-ratio:16 / 11;overflow:hidden;background:var(--bg)}
+.shot::before{content:attr(data-n);position:absolute;inset:0;display:grid;place-items:center;font:600 56px/1 var(--font);color:#D8D8D4}
+.shot iframe{position:absolute;top:0;left:0;width:1440px;height:990px;border:0;transform-origin:0 0;pointer-events:none;background:var(--card)}
+.shot:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.txt{display:flex;flex-direction:column;gap:6px;padding:20px 22px 22px;flex:1}
+.txt b{font:600 20px/1.2 var(--font);letter-spacing:-0.01em}
+.txt p{margin:0;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font-size:13px;padding:3px 9px;background:var(--bg);color:#3D3D3D}
+.links{display:flex;gap:20px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.links a{font-weight:600;color:var(--ink);text-decoration:none;padding:6px 0}
+.links a:hover{text-decoration:underline;text-underline-offset:4px}
+.links a.alt{font-weight:500;color:var(--muted)}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.grid{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Концепты сайтов</h1>
+  <p class="sub">Три проекта: для каждого сначала мудборд и стиль, потом сайт. Тексты-заглушки в квадратных скобках заменяются данными клиента.</p>
+  <div class="grid">
+    <article class="c" style="--accent:#2B3FD6">
+      <a class="shot" href="etoffe/" data-n="1" aria-label="Открыть сайт ÉTOFFE"><iframe src="etoffe/index.html" title="Превью ÉTOFFE" loading="lazy" tabindex="-1"></iframe></a>
+      <div class="txt">
+        <b>ÉTOFFE — сумки на заказ</b>
+        <p>Лендинг авторской мастерской: журнальная вёрстка, кожа и шёлк, кобальт как акцент.</p>
+        <div class="tags"><span>Лендинг</span><span>Мода</span></div>
+        <div class="links"><a href="etoffe/">Сайт →</a><a class="alt" href="etoffe/moodboard.html">Мудборд</a></div>
+      </div>
+    </article>
+    <article class="c" style="--accent:#1F4D3A">
+      <a class="shot" href="saldo/" data-n="2" aria-label="Открыть сайт Сальдо"><iframe src="saldo/index.html" title="Превью Сальдо" loading="lazy" tabindex="-1"></iframe></a>
+      <div class="txt">
+        <b>Сальдо — бухгалтерские услуги</b>
+        <p>Главная многостраничного сайта: стиль бухгалтерской книги, цифры моноширинным, маркер для главного.</p>
+        <div class="tags"><span>Главная</span><span>Услуги</span></div>
+        <div class="links"><a href="saldo/">Сайт →</a><a class="alt" href="saldo/moodboard.html">Мудборд и структура</a></div>
+      </div>
+    </article>
+    <article class="c" style="--accent:#F29E6D">
+      <a class="shot" href="farfor/" data-n="3" aria-label="Открыть сайт Фарфор"><iframe src="farfor/index.html" title="Превью Фарфор" loading="lazy" tabindex="-1"></iframe></a>
+      <div class="txt">
+        <b>Фарфор — стоматология</b>
+        <p>Кликабельный прототип на 10 страниц: услуги, врачи, цены с поиском и запись на приём в 4 шага.</p>
+        <div class="tags"><span>Прототип</span><span>10 страниц</span><span>Медицина</span></div>
+        <div class="links"><a href="farfor/">Сайт →</a><a class="alt" href="farfor/moodboard.html">Мудборд</a></div>
+      </div>
+    </article>
+  </div>
+</main>
+<script>
+// Превью: страница 1440 px масштабируется под ширину карточки
+function fit(){document.querySelectorAll('.shot').forEach(function(s){s.querySelector('iframe').style.transform='scale('+(s.clientWidth/1440)+')';});}
+addEventListener('resize',fit);fit();
+</script>
+</body>
+</html>
