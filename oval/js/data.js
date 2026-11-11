@@ -11,6 +11,7 @@
   var MATS = ['Букле','Бархат','Рогожка','Велюр','Лён'];
   var IMG = {straight:['milk','terra','graph','olive'], corner:['sand','choc'], modular:['olive','milk'], bed:['graph','sand'], chair:['milk','terra','powder','lilac'], pouf:['powder','choc']};
   var MAT_BY = {milk:'Букле', terra:'Бархат', graph:'Рогожка', olive:'Велюр', sand:'Лён', choc:'Бархат', powder:'Велюр', lilac:'Бархат'};
+  var MAT_FIX = {pouf_choc:'Букле', modular_olive:'Букле', modular_milk:'Букле', straight_olive:'Бархат', chair_powder:'Бархат'};
 
   var names = ['Облако','Дюна','Ракушка','Лукум','Бриошь','Кокон','Пломбир','Сота','Терра','Ирис','Орбита','Плато','Бархан','Мокко','Зефир','Каштан','Гавань','Кедр','Полдень','Сумрак','Тмин','Вельвет','Нуга','Шале','Фьорд','Пастила','Мираж','Остров','Кварц','Миндаль'];
   var plan = ['straight','corner','chair','straight','modular','bed','pouf','corner','straight','chair','modular','straight','bed','corner','chair','pouf','straight','modular','corner','bed','chair','straight','pouf','corner','modular','straight','chair','bed','straight','chair'];
@@ -32,7 +33,7 @@
     return {id:i, name: NOUN[t]+' «'+names[i]+'»', type:t, img:'img/p/'+t+'_'+img+'.jpg', price:price,
       old: sale ? Math.round(price/(1-sale/100)/10)*10 : 0, sale:sale, w:w,
       d: t==='chair' ? Math.round(72+rnd()*18) : t==='pouf' ? w : Math.round(90+rnd()*20),
-      h: t==='pouf' ? 45 : Math.round(76+rnd()*14), cols:cols, mat: MAT_BY[img] || pick(MATS), mech:mech,
+      h: t==='pouf' ? 45 : Math.round(76+rnd()*14), cols:cols, mat: MAT_FIX[t+'_'+img] || MAT_BY[img] || pick(MATS), mech:mech,
       days:days, stock: days <= 7, isNew: rnd() < 0.22, pop: rnd()};
   });
 
