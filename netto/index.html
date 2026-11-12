@@ -8,7 +8,7 @@
 <meta property="og:title" content="НЕТТО — бухгалтерия, в которой всё сходится">
 <meta property="og:description" content="Учёт, зарплата и отчётность для ООО и ИП со сверкой с ФНС каждый квартал.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="img/equals.jpg">
+<meta property="og:image" content="img/office.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317191C'/%3E%3Crect x='7' y='10' width='18' height='4' rx='1' fill='%23D5DADE'/%3E%3Crect x='7' y='18' width='18' height='4' rx='1' fill='%23D5DADE'/%3E%3Crect x='7' y='15' width='18' height='2' fill='%23C8F31D'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
 .hero__check span{display:block;font-size:13px;color:var(--muted)}
 .hero__check b{display:block;font:400 19px/1.3 var(--f-n);margin-top:2px}
 .hero__check div:last-child{text-align:right}
-.hero__ph{aspect-ratio:1/1}
+.hero__ph{aspect-ratio:4/5;max-height:640px;justify-self:end;width:100%;max-width:520px;background:#111}
 
 /* Закрытие месяца: строки сверки */
 .close{background:var(--white);padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -71,8 +71,8 @@
 
 /* Личный бухгалтер */
 .pers{padding:24px 0 88px}
-.pers__grid{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
-.pers .ph{aspect-ratio:3/2}
+.pers__grid{display:grid;grid-template-columns:480px 1fr;gap:72px;align-items:center}
+.pers .ph{aspect-ratio:4/5}
 .pers h2{margin-bottom:16px}
 .duty{margin:28px 0 0;padding:0;list-style:none}
 .duty li{padding:12px 0 12px 40px;border-top:1px solid var(--line);position:relative}
@@ -93,6 +93,7 @@
 /* Как начинаем */
 .start{padding:88px 0 72px}
 .start h2{margin-bottom:40px}
+.start__ph{aspect-ratio:21/8;margin-bottom:56px}
 .track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
 .track::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--line-2)}
 .track__it{position:relative;padding-top:36px}
@@ -111,6 +112,7 @@
 .req{padding:0 0 96px}
 .req__box{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:48px;display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
 .req__box .sub{margin-top:14px}
+.req__ph{aspect-ratio:16/10;margin-bottom:28px}
 .req__eq{display:flex;align-items:center;gap:18px;margin-top:32px;font:400 17px/1.3 var(--f-n);flex-wrap:wrap}
 .req__eq span{white-space:nowrap}
 .req form{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start}
@@ -153,6 +155,7 @@
   .safe .ph{display:none}
   .safe__list{grid-template-columns:1fr;margin-top:24px}
   .start{padding:56px 0 40px}
+  .start__ph{aspect-ratio:16/10;margin-bottom:32px}
   .track{grid-template-columns:1fr;gap:0}
   .track::before{left:7px;right:auto;top:0;bottom:0;width:1px;height:auto}
   .track__it{padding:0 0 24px 36px}
@@ -218,7 +221,7 @@
         </div>
       </div>
       <div class="ph hero__ph">
-        <img src="img/equals.jpg" width="1200" height="1200" alt="Знак равенства из двух алюминиевых брусков с лаймовой полосой света между ними">
+        <img src="img/equals.jpg" width="952" height="1269" alt="Знак равенства из двух стальных брусков с лаймовым светом между ними на графитовой стене" style="object-position:50% 45%">
       </div>
     </div>
   </section>
@@ -259,7 +262,7 @@
         </div>
         <div>
           <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
-            <div class="ph"><img src="img/balance.jpg" width="1200" height="800" alt="Весы-балка из алюминия в идеальном равновесии" style="object-position:50% 55%"></div>
+            <div class="ph"><img src="img/paper.jpg" width="1400" height="1059" alt="Ровная стопка документов с лаймовым зажимом на стальном столе" style="object-position:40% 50%"></div>
             <div>
               <h3>Ведение учёта под ключ</h3>
               <p class="sub">Берём всю бухгалтерию: от первички до сверки с налоговой.</p>
@@ -272,7 +275,7 @@
             </div>
           </div>
           <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
-            <div class="ph"><img src="img/cube.jpg" width="1200" height="1200" alt="Лист белой бумаги, сложенный в ровный куб" style="object-position:50% 60%"></div>
+            <div class="ph"><img src="img/sign.jpg" width="1400" height="933" alt="Рука подписывает документы серебряной ручкой, рядом лаймовая папка" style="object-position:45% 50%"></div>
             <div>
               <h3>Открытие бизнеса</h3>
               <p class="sub">Подготовим документы и выберем систему налогов до первой сделки, а не после.</p>
@@ -285,7 +288,7 @@
             </div>
           </div>
           <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
-            <div class="ph"><img src="img/glass.jpg" width="1200" height="1200" alt="Стопка матовых стёкол, одна грань светится лаймом" style="object-position:62% 50%"></div>
+            <div class="ph"><img src="img/glass.jpg" width="1400" height="1400" alt="Слои матового стекла с лаймовой линией света"></div>
             <div>
               <h3>Восстановление учёта</h3>
               <p class="sub">Соберём то, что есть, найдём пробелы и закроем их до проверки.</p>
@@ -298,7 +301,7 @@
             </div>
           </div>
           <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
-            <div class="ph"><img src="img/level.jpg" width="800" height="1200" alt="Строительный уровень, пузырёк точно по центру" style="object-position:50% 30%"></div>
+            <div class="ph"><img src="img/scale.jpg" width="933" height="1400" alt="Стальные весы с двумя одинаковыми стеклянными кубами в равновесии" style="object-position:50% 70%"></div>
             <div>
               <h3>Закрытие бизнеса</h3>
               <p class="sub">Закроем компанию без хвостов, а документы сдадим в архив.</p>
@@ -317,7 +320,7 @@
 
   <section class="pers" aria-labelledby="pers-h">
     <div class="wrap pers__grid">
-      <div class="ph"><img src="img/hands.jpg" width="1200" height="800" alt="Руки бухгалтера кладут стеклянный планшет на алюминиевый стол в светлом офисе"></div>
+      <div class="ph"><img src="img/portrait.jpg" width="1059" height="1400" alt="Бухгалтер в светло-сером костюме с лаймовой папкой у матовой стеклянной стены" style="object-position:50% 25%"></div>
       <div>
         <h2 id="pers-h">Личный бухгалтер</h2>
         <p class="sub">Один человек знает ваш бизнес целиком и отвечает в рабочее время в мессенджере. Не нужно каждый раз объяснять, кто ваш поставщик и почему у вас два расчётных счёта.</p>
@@ -343,12 +346,13 @@
           <div><h3>Передача без потерь</h3><p>Если уйдёте, отдадим базу и архив по описи.</p></div>
         </div>
       </div>
-      <div class="ph"><img src="img/vault.jpg" width="800" height="1200" alt="Стена из алюминиевых ячеек сейфа, одна выдвинута"></div>
+      <div class="ph"><img src="img/archive.jpg" width="1059" height="1400" alt="Стена стальных архивных ящиков, один открыт, папки с лаймовыми ярлыками" style="object-position:40% 60%"></div>
     </div>
   </section>
 
   <section class="start" id="start" aria-labelledby="start-h">
     <div class="wrap">
+      <div class="ph start__ph"><img src="img/office.jpg" width="1400" height="781" alt="Минималистичный офис со стальным столом, стеклянными перегородками и лаймовыми креслами"></div>
       <h2 id="start-h">Как начинаем</h2>
       <div class="track">
         <div class="track__it"><h3>Звонок</h3><p>Спросим о налоговом режиме, сотрудниках и количестве операций.</p></div>
@@ -379,6 +383,7 @@
     <div class="wrap">
       <div class="req__box">
         <div>
+          <div class="ph req__ph"><img src="img/handover.jpg" width="1059" height="1400" alt="Владелец бизнеса передаёт бухгалтеру лаймовую папку с документами" style="object-position:50% 55%"></div>
           <h2 id="req-h">Расчёт стоимости</h2>
           <p class="sub">Оставьте телефон. Перезвоним в рабочее время, зададим три вопроса и назовём цену вашего учёта.</p>
           <div class="req__eq" aria-hidden="true"><span>Ваш учёт</span><i class="eq"></i><span>[ЦЕНА] ₽ в месяц</span></div>
@@ -432,7 +437,7 @@
     </div>
     <div class="ftr__low">
       <span>ООО «[НАЗВАНИЕ]» · ИНН [ИНН] · ОГРН [ОГРН]</span>
-      <span><a href="#">Политика конфиденциальности</a> · Изображения сгенерированы для концепта</span>
+      <span><a href="#">Политика конфиденциальности</a> · Фото сгенерированы для концепта (FLUX)</span>
     </div>
   </div>
 </footer>

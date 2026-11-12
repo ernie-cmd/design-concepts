@@ -4,18 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>НЕТТО — мудборд</title>
+<title>НЕТТО — мудборд и креативы</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@400;500;600&amp;family=Sofia+Sans:wght@400;500&amp;family=Martian+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
+
+body{margin:0}
+a{color:#4a5056}a:hover{color:#17191c}
+
+
 body{margin:0}
 a{color:#4a5056}a:hover{color:#17191c}
 .t{position:relative;overflow:hidden;border-radius:6px;background:#dfe3e6}
 .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-</style>
-<style>
+
+
+body{margin:0}
+a{color:#4a5056}a:hover{color:#17191c}
+.cr{position:relative;overflow:hidden;border-radius:6px;background:#dfe3e6}
+.cr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
 body{background:#DADFE2}
-.board{width:1600px;transform-origin:0 0;margin:0 auto}
+.board{width:1600px;transform-origin:0 0}
 .fit{overflow:hidden;margin:24px auto;max-width:1600px}
 .back{display:block;max-width:1600px;margin:24px auto 0;padding:0 16px;font:600 15px 'Sofia Sans',sans-serif;color:#17191C}
 </style>
@@ -29,24 +39,59 @@ body{background:#DADFE2}
       <span style="display: inline-block; width: 40px; height: 2px; background: #C8F31D; transform: translateY(-12px)"></span>
       <p style="margin: 0; font-size: 18px; color: #4a5056">Бухгалтерские услуги. Хай-тек минимализм. Всё сходится.</p>
     </div>
-    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #5a6066">мудборд · кадры ChatGPT Image</p>
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #5a6066">мудборд · кадры FLUX Pro Ultra</p>
   </header>
 
-  <div style="flex: 1; display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 1fr 1fr 1fr 1.25fr; gap: 12px; grid-template-areas: 'eq eq eq bal bal bal' 'eq eq eq vault lvl glass' 'eq eq eq vault lvl glass' 'hands hands cube cube pal pal'">
-    <div class="t" style="grid-area: eq"><img src="img/equals.jpg" alt="Знак равно из двух алюминиевых брусков с лаймовой полосой света"></div>
-    <div class="t" style="grid-area: bal"><img src="img/balance.jpg" alt="Весы-балка в идеальном равновесии" style="object-position: 50% 52%"></div>
-    <div class="t" style="grid-area: vault"><img src="img/vault.jpg" alt="Выдвинутая ячейка сейфа с папкой"></div>
-    <div class="t" style="grid-area: lvl"><img src="img/level.jpg" alt="Уровень с лаймовым пузырьком точно по центру" style="object-position: 50% 35%"></div>
-    <div class="t" style="grid-area: glass"><img src="img/glass.jpg" alt="Стопка матовых стёкол с одной лаймовой гранью" style="object-position: 62% 50%"></div>
-    <div class="t" style="grid-area: hands"><img src="img/hands.jpg" alt="Руки кладут стеклянный планшет на алюминиевый стол"></div>
-    <div class="t" style="grid-area: cube"><img src="img/cube.jpg" alt="Лист бумаги, сложенный в точный куб" style="object-position: 50% 62%"></div>
-    <div style="grid-area: pal; display: grid; grid-template-columns: 1.4fr 1fr 1fr 0.6fr; gap: 12px">
-      <div style="border-radius: 6px; background: #f6f8f9; box-shadow: inset 0 0 0 1px #d5dade; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; font-family: 'Martian Mono', monospace; font-size: 11px; color: #3c4146">Молочное стекло<br>#F6F8F9</div>
-      <div style="border-radius: 6px; background: linear-gradient(160deg, #d3d7da, #a9afb4 55%, #c4c9cc); display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; font-family: 'Martian Mono', monospace; font-size: 11px; color: #17191c">Алюминий<br>#AEB4B9</div>
-      <div style="border-radius: 6px; background: #17191c; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; font-family: 'Martian Mono', monospace; font-size: 11px; color: #e6e9eb">Графит<br>#17191C</div>
-      <div style="border-radius: 6px; background: #C8F31D; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; font-family: 'Martian Mono', monospace; font-size: 11px; color: #17191c">Лайм<br>#C8F31D</div>
+  <div style="flex: 1; display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(4, 1fr); gap: 12px; grid-template-areas: 'eq eq por por off off' 'eq eq por por off off' 'sig sig sca pap pap arc' 'sig sig sca gla pal arc'">
+    <div class="t" style="grid-area: eq; background: #111"><img src="img/equals.jpg" alt="Знак равенства из двух стальных брусков с лаймовым светом между ними на графитовой стене" style="object-position: 50% 45%"></div>
+    <div class="t" style="grid-area: por"><img src="img/portrait.jpg" alt="Бухгалтер в светло-сером костюме с лаймовой папкой у матового стекла" style="object-position: 50% 22%"></div>
+    <div class="t" style="grid-area: off"><img src="img/office.jpg" alt="Минималистичный офис: алюминиевый стол, стеклянные перегородки, лаймовые кресла"></div>
+    <div class="t" style="grid-area: sig"><img src="img/sign.jpg" alt="Рука подписывает договор серебряной ручкой, рядом лаймовая папка"></div>
+    <div class="t" style="grid-area: sca"><img src="img/scale.jpg" alt="Стальные лабораторные весы с двумя одинаковыми стеклянными кубами в равновесии" style="object-position: 50% 70%"></div>
+    <div class="t" style="grid-area: pap"><img src="img/paper.jpg" alt="Ровная стопка белых документов с лаймовым зажимом в жёстком утреннем свете"></div>
+    <div class="t" style="grid-area: arc"><img src="img/archive.jpg" alt="Стена алюминиевых архивных ящиков, один открыт, папки с лаймовыми ярлыками" style="object-position: 40% 60%"></div>
+    <div class="t" style="grid-area: gla"><img src="img/glass.jpg" alt="Слои матового стекла с лаймовой линией света"></div>
+    <div style="grid-area: pal; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px">
+      <div style="border-radius: 6px; background: #f6f8f9; box-shadow: inset 0 0 0 1px #d5dade; display: flex; align-items: flex-end; padding: 8px; font-family: 'Martian Mono', monospace; font-size: 10px; color: #3c4146">#F6F8F9</div>
+      <div style="border-radius: 6px; background: linear-gradient(160deg, #d3d7da, #a9afb4 55%, #c4c9cc); display: flex; align-items: flex-end; padding: 8px; font-family: 'Martian Mono', monospace; font-size: 10px; color: #17191c">#AEB4B9</div>
+      <div style="border-radius: 6px; background: #17191c; display: flex; align-items: flex-end; padding: 8px; font-family: 'Martian Mono', monospace; font-size: 10px; color: #e6e9eb">#17191C</div>
+      <div style="border-radius: 6px; background: #C8F31D; display: flex; align-items: flex-end; padding: 8px; font-family: 'Martian Mono', monospace; font-size: 10px; color: #17191c">#C8F31D</div>
     </div>
   </div>
+</div></div></div>
+<div class="fit"><div class="board"><div style="width: 1600px; height: 1880px; box-sizing: border-box; padding: 48px; background: #EEF1F2; font-family: 'Sofia Sans', sans-serif; color: #17191c; display: flex; flex-direction: column; gap: 28px">
+  <header style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px">
+    <div style="display: flex; align-items: baseline; gap: 20px">
+      <h1 style="margin: 0; font-family: 'Sofia Sans Semi Condensed', sans-serif; font-weight: 600; font-size: 44px; letter-spacing: 0.04em">Креативы</h1>
+      <span style="display: inline-block; width: 40px; height: 2px; background: #C8F31D; transform: translateY(-12px)"></span>
+      <p style="margin: 0; font-size: 18px; color: #4a5056">Три кадра под рекламу. Текст ставится отдельным слоем поверх, на картинке его нет.</p>
+    </div>
+    <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; color: #5a6066">FLUX Pro Ultra</p>
+  </header>
+
+  <div style="display: flex; gap: 24px; height: 800px">
+    <div class="cr" style="width: 450px; flex: none"><img src="img/mb_story.jpg" alt="Владелец бизнеса отдыхает в кресле с кофе, ноутбук закрыт, на столе лаймовая папка с документами"></div>
+    <div class="cr" style="width: 600px; flex: none"><img src="img/handover.jpg" alt="Руки владельца бизнеса передают лаймовую папку с документами рукам бухгалтера"></div>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 0; border-top: 1px solid #17191c">
+      <div style="padding: 20px 0; border-bottom: 1px solid #d5dade">
+        <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; color: #5a6066">Сторис 9:16</p>
+        <h2 style="margin: 8px 0 6px; font-family: 'Sofia Sans Semi Condensed', sans-serif; font-weight: 600; font-size: 24px">Бухгалтерия на нас, вечер ваш</h2>
+        <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3c4146">Владелец бизнеса отдыхает, документы лежат в лаймовой папке. Заголовок встаёт на пустую стену сверху.</p>
+      </div>
+      <div style="padding: 20px 0; border-bottom: 1px solid #d5dade">
+        <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; color: #5a6066">Пост 3:4</p>
+        <h2 style="margin: 8px 0 6px; font-family: 'Sofia Sans Semi Condensed', sans-serif; font-weight: 600; font-size: 24px">Передайте документы, остальное сделаем мы</h2>
+        <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3c4146">Папку передают из рук в руки: сразу понятно, что работу забирают на себя. Место под текст — размытое стекло сверху.</p>
+      </div>
+      <div style="padding: 20px 0">
+        <p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; color: #5a6066">Баннер 16:9</p>
+        <h2 style="margin: 8px 0 6px; font-family: 'Sofia Sans Semi Condensed', sans-serif; font-weight: 600; font-size: 24px">Личный бухгалтер для ИП и ООО</h2>
+        <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3c4146">Бухгалтер за столом смотрит в камеру. Левая половина свободна под заголовок и кнопку.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr" style="height: 846px; flex: none"><img src="img/mb_banner.jpg" alt="Бухгалтер в сером костюме за алюминиевым столом с ноутбуком и лаймовой папкой улыбается в камеру"></div>
 </div></div></div>
 <div class="fit"><div class="board"><div style="width: 1600px; height: 900px; box-sizing: border-box; padding: 48px; background: #EEF1F2; font-family: 'Sofia Sans', sans-serif; color: #17191c; display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 40px">
 
@@ -100,7 +145,7 @@ body{background:#DADFE2}
       </div>
       <div style="flex: 1; background: #F6F8F9; border-radius: 6px; box-shadow: inset 0 0 0 1px #d5dade; padding: 20px; display: flex; flex-direction: column; justify-content: space-between">
         <span style="font-family: 'Martian Mono', monospace; font-size: 11px; color: #5a6066">Правила</span>
-        <span style="display: block; font-size: 15px; line-height: 1.55; color: #2a2e32">Скругления 6 px. Линии 1 px #D5DADE. Много воздуха. Символы вместо калькулятора: весы, «равно», уровень, стекло-архив, бумажный куб, ячейка сейфа. Текст никогда не печатаем на фото — только поверх, отдельным слоем.</span>
+        <span style="display: block; font-size: 15px; line-height: 1.55; color: #2a2e32">Скругления 6 px. Линии 1 px #D5DADE. Много воздуха. Символы вместо калькулятора: «равно» с лаймовым светом, весы в равновесии, лаймовая папка с документами, архив. Текст никогда не печатаем на фото — только поверх, отдельным слоем.</span>
       </div>
     </div>
   </section>

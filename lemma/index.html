@@ -101,7 +101,8 @@
 
 /* Закрытие месяца */
 .month{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:88px 0}
-.month h2{margin-bottom:40px}
+.month h2{margin-bottom:28px}
+.month__ph{aspect-ratio:24/7;margin-bottom:48px}
 .month__grid{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:32px;align-items:start}
 .stage h3{font-size:20px;margin-bottom:16px}
 .files{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
@@ -199,7 +200,8 @@
   .calc__q,.calc__r{padding:24px 16px}
   .calc__sum strong{font-size:26px}
   .month{padding:56px 0}
-  .month h2{margin-bottom:24px}
+  .month h2{margin-bottom:20px}
+  .month__ph{aspect-ratio:16/9;margin-bottom:28px}
   .month__grid{gap:36px}
   .sheet{padding:18px 16px}
   .lead-person{padding:56px 0}
@@ -303,7 +305,7 @@
           <li><div><b>Кадровый и воинский учёт</b><span>Трудовые договоры, приказы, штатное расписание</span></div><em><strong>от 2&nbsp;000&nbsp;₽</strong><small>в месяц</small></em></li>
           <li><div><b>Оптимизация налоговой нагрузки</b><span>Подберём режим и законные способы платить меньше</span></div><em><strong>в прайс-листе</strong></em></li>
         </ul>
-        <div class="ph"><img src="img/balance.jpg" width="1200" height="800" alt="Весы-балка в равновесии" style="object-position:50% 55%"></div>
+        <div class="ph"><img src="img/paper.jpg" width="1400" height="1059" alt="Ровная стопка документов с лаймовым зажимом" style="object-position:40% 50%"></div>
       </div>
       <div class="pp" role="tabpanel" id="s2" aria-labelledby="c2" hidden>
         <ul class="price">
@@ -311,14 +313,14 @@
           <li><div><b>ООО с несколькими учредителями</b><span>Устав, решение учредителей, распределение долей</span></div><em><strong>в прайс-листе</strong></em></li>
           <li><div><b>Выбор системы налогообложения</b><span>Сравним нагрузку и подберём режим до первой сделки</span></div><em><strong>в прайс-листе</strong></em></li>
         </ul>
-        <div class="ph"><img src="img/cube.jpg" width="1200" height="1200" alt="Лист бумаги, сложенный в ровный куб" style="object-position:50% 60%"></div>
+        <div class="ph"><img src="img/handover.jpg" width="1059" height="1400" alt="Лаймовую папку с документами передают из рук в руки" style="object-position:50% 55%"></div>
       </div>
       <div class="pp" role="tabpanel" id="s3" aria-labelledby="c3" hidden>
         <ul class="price">
           <li><div><b>Постановка и восстановление учёта</b><span>Соберём первичку, сверимся с ФНС и СФР, сдадим недостающие отчёты</span></div><em><strong>от 5&nbsp;000&nbsp;₽</strong></em></li>
           <li><div><b>Ведение бухгалтерии после восстановления</b><span>Переходите на обычный тариф</span></div><em><strong>от 6&nbsp;000&nbsp;₽</strong><small>в месяц</small></em></li>
         </ul>
-        <div class="ph"><img src="img/glass.jpg" width="1200" height="1200" alt="Стопка матовых стёкол, как архив документов" style="object-position:62% 50%"></div>
+        <div class="ph"><img src="img/archive.jpg" width="1059" height="1400" alt="Стена архивных ящиков, папки с лаймовыми ярлыками" style="object-position:40% 60%"></div>
       </div>
       <div class="pp" role="tabpanel" id="s4" aria-labelledby="c4" hidden>
         <ul class="price">
@@ -327,14 +329,14 @@
           <li><div><b>Смена юридического адреса</b><span>Документы и подача в налоговую</span></div><em><strong>от 1&nbsp;000&nbsp;₽</strong></em></li>
           <li><div><b>Юридические консультации</b><span>Устно или письменным заключением</span></div><em><strong>от 1&nbsp;000&nbsp;₽</strong></em></li>
         </ul>
-        <div class="ph"><img src="img/hands.jpg" width="1200" height="800" alt="Руки кладут стеклянный планшет на стол"></div>
+        <div class="ph"><img src="img/scale.jpg" width="933" height="1400" alt="Стальные весы в равновесии" style="object-position:50% 70%"></div>
       </div>
       <div class="pp" role="tabpanel" id="s5" aria-labelledby="c5" hidden>
         <ul class="price">
           <li><div><b>Ликвидация ООО</b><span>Комиссия, балансы, уведомления</span></div><em><strong>в прайс-листе</strong></em></li>
           <li><div><b>Закрытие ИП</b><span>Последние отчёты и снятие с учёта</span></div><em><strong>в прайс-листе</strong></em></li>
         </ul>
-        <div class="ph"><img src="img/vault.jpg" width="800" height="1200" alt="Выдвинутая ячейка сейфа с папкой" style="object-position:50% 40%"></div>
+        <div class="ph"><img src="img/sign.jpg" width="1400" height="933" alt="Подпись документов серебряной ручкой" style="object-position:45% 50%"></div>
       </div>
     </div>
   </section>
@@ -377,6 +379,7 @@
   <section class="month" id="mesyac" aria-labelledby="month-h">
     <div class="wrap">
       <h2 id="month-h">Как мы закрываем месяц</h2>
+      <div class="ph month__ph"><img src="img/office.jpg" width="1400" height="781" alt="Светлый офис со стальным столом и стеклянными перегородками"></div>
       <div class="month__grid">
         <div class="stage">
           <h3>Сначала вы присылаете документы</h3>
