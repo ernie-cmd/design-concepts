@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ГНОМОН — агентство перформанс-маркетинга</title>
+<meta name="description" content="Перформанс-маркетинг от модели юнит-экономики: контекст, таргет, сквозная аналитика. Концепт главной страницы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0C0F;--ink-2:#121318;--ink-3:#1A1B21;--line:#2A2B30;
+  --marble:#F1EFEA;--marble-2:#E6E3DC;--stone:#8F8B84;--stone-l:#A9A59D;--stone-d:#5E5B55;
+  --blue:#3355FF;--blue-h:#2442E6;--blue-l:#8FA2FF;--klein:#05338B;
+  --serif:'Forum',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;--mono:'Fira Mono',ui-monospace,monospace;
+  --wrap:1320px;--pad:clamp(20px,4vw,48px)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--marble);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.08}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--blue-l);outline-offset:3px}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:2px;font:600 15px/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-h)}
+.btn-marble{background:var(--marble);color:var(--ink)}.btn-marble:hover{background:#fff}
+.btn-line{border-color:rgba(241,239,234,.45);color:var(--marble);background:transparent}.btn-line:hover{border-color:var(--marble)}
+.btn-ink{background:var(--ink);color:var(--marble)}.btn-ink:hover{background:#000}
+.btn svg{width:16px;height:16px}
+
+/* лазер и визиры */
+.laser{height:1px;background:var(--blue);box-shadow:0 0 10px 1px rgba(51,85,255,.65)}
+.visor{position:relative}
+.visor::before,.visor::after,.visor>.v2::before,.visor>.v2::after{content:"";position:absolute;width:14px;height:14px;z-index:2;pointer-events:none}
+.visor::before{left:12px;top:12px;border-left:1px solid var(--marble);border-top:1px solid var(--marble)}
+.visor::after{right:12px;top:12px;border-right:1px solid var(--marble);border-top:1px solid var(--marble)}
+.visor>.v2::before{left:12px;bottom:12px;border-left:1px solid var(--marble);border-bottom:1px solid var(--marble)}
+.visor>.v2::after{right:12px;bottom:12px;border-right:1px solid var(--marble);border-bottom:1px solid var(--marble)}
+.coord{position:absolute;z-index:2;font-family:var(--mono);font-size:12px;color:var(--marble);letter-spacing:.04em}
+
+/* шапка */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.solid{background:rgba(11,12,15,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:32px;height:76px}
+.logo{font-family:var(--serif);font-size:24px;letter-spacing:.2em;text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{font-size:15px;text-decoration:none;color:rgba(241,239,234,.85);padding:6px 0;border-bottom:1px solid transparent}
+.nav a:hover{color:var(--marble);border-color:var(--blue)}
+.hdr-cta{min-height:42px;padding:0 18px;font-size:14px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:1px solid rgba(241,239,234,.35);border-radius:2px;background:transparent;color:var(--marble);cursor:pointer;align-items:center;justify-content:center}
+.burger svg{width:20px;height:20px}
+.mnav{display:none}
+
+/* первый экран */
+.hero{position:relative;min-height:min(880px,100vh);background:var(--klein);overflow:hidden;display:flex;align-items:center}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 38%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,30,90,.55),rgba(5,30,90,0) 55%);pointer-events:none}
+.scan{position:absolute;left:0;right:0;top:0;height:1px;background:rgba(220,228,255,.85);box-shadow:0 0 12px 2px rgba(120,150,255,.7);z-index:1;animation:scan 7s cubic-bezier(.45,0,.55,1) infinite;opacity:.0}
+@keyframes scan{0%{top:12%;opacity:0}10%{opacity:.9}50%{top:88%;opacity:.9}60%{opacity:0}100%{top:88%;opacity:0}}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:120px;padding-bottom:140px}
+.hero-txt{max-width:520px;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.hero-txt .mono{color:#DCE2FF}
+.hero h1{font-size:clamp(40px,4.4vw,58px)}
+.hero .lead{font-size:18px;line-height:1.55;color:#E4E8FA;max-width:440px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-coord{right:var(--pad);top:110px}
+.chan{position:absolute;left:0;right:0;bottom:0;z-index:2;border-top:1px solid rgba(241,239,234,.22);background:rgba(4,22,70,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.chan .wrap{display:flex;gap:10px 36px;flex-wrap:wrap;align-items:center;min-height:64px;padding-top:14px;padding-bottom:14px}
+.chan span{font-family:var(--mono);font-size:13px;color:#E4E8FA;letter-spacing:.03em}
+.chan span:first-child{color:#B9C4F5}
+
+/* секции */
+.sec{padding:120px 0}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:56px;align-items:start}
+.sec-head .mono{color:var(--stone-l);padding-top:12px}
+.sec h2{font-size:clamp(32px,3.2vw,42px);max-width:720px}
+.sec-head p{margin-top:16px;max-width:620px;color:var(--stone-l);font-size:17px}
+.light{background:var(--marble);color:var(--ink)}
+.light .sec-head .mono,.light .sec-head p{color:var(--stone-d)}
+
+/* аксиомы */
+.ax{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
+.ax-list{display:flex;flex-direction:column}
+.ax-item{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:32px 0;border-top:1px solid #CFCBC2}
+.ax-item:last-child{border-bottom:1px solid #CFCBC2}
+.ax-item .num{font-family:var(--serif);font-size:36px;line-height:1;color:var(--blue)}
+.ax-item h3{font-size:28px;margin-bottom:10px}
+.ax-item p{color:#3F3C37;font-size:16px}
+.ax-photo{position:relative;min-height:560px;background:#000;overflow:hidden;border-radius:2px}
+.ax-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.ax-photo .coord{left:36px;bottom:30px}
+
+/* услуги */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc a{position:relative;display:flex;flex-direction:column;gap:14px;min-height:260px;padding:32px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;transition:background .25s}
+.svc a::after{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--blue);box-shadow:0 0 10px 1px rgba(51,85,255,.65);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.svc a:hover{background:var(--ink-2)}
+.svc a:hover::after{transform:scaleX(1)}
+.svc .mono{color:var(--stone)}
+.svc h3{font-size:26px}
+.svc p{color:var(--stone-l);font-size:15px}
+.svc .go{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--marble)}
+.svc .go svg{width:16px;height:16px;transition:transform .25s}
+.svc a:hover .go svg{transform:translateX(4px)}
+
+/* широкий кадр */
+.wide{position:relative;height:min(640px,62vw);min-height:420px;overflow:hidden;background:#000}
+.wide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wide::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,7,10,.92) 0%,rgba(6,7,10,.6) 30%,rgba(6,7,10,0) 55%)}
+.wide .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:72px}
+.wide h2{font-size:clamp(32px,3.2vw,44px);margin-bottom:16px}
+.wide p{max-width:420px;color:#C9C5BD;font-size:17px}
+.wide .coord{top:28px;right:var(--pad)}
+
+/* процесс */
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+.steps::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--line)}
+.steps .laser{position:absolute;left:0;top:7px;width:0;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+.steps.in .laser{width:100%}
+.step{position:relative;padding-top:40px}
+.step::before{content:"";position:absolute;left:0;top:0;width:15px;height:15px;border:1px solid var(--blue);background:var(--ink);transform:rotate(45deg) scale(.75)}
+.step .mono{color:var(--stone)}
+.step h3{font-size:24px;margin:10px 0 10px}
+.step p{color:var(--stone-l);font-size:15px}
+
+/* кейсы */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case{display:flex;flex-direction:column;border:1px solid #CFCBC2;border-radius:2px;background:#F7F5F1;text-decoration:none;transition:border-color .2s}
+.case:hover{border-color:var(--ink)}
+.case-top{padding:28px 28px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.case .mono{color:var(--stone-d)}
+.case h3{font-size:26px}
+.case p{color:#3F3C37;font-size:15px}
+.case-m{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #CFCBC2}
+.case-m div{padding:18px 28px;display:flex;flex-direction:column;gap:4px}
+.case-m div+div{border-left:1px solid #CFCBC2}
+.case-m b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
+.case-m b.acc{color:var(--blue)}
+.case-m span{font-family:var(--mono);font-size:12px;color:var(--stone-d)}
+.cases-note{margin-top:20px;font-size:14px;color:var(--stone-d)}
+
+/* отчёт */
+.rep{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:center}
+.rep-photo{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--ink-2);border-radius:2px}
+.rep-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 40%}
+.rep-photo .coord{left:36px;bottom:30px}
+.rep-txt h2{font-size:clamp(32px,3.2vw,42px);margin:14px 0 18px}
+.rep-txt>p{color:var(--stone-l);font-size:17px;max-width:560px}
+.rep-txt .mono{color:var(--stone-l)}
+.dash{margin-top:36px;border:1px solid var(--line);border-radius:2px;background:var(--ink-2)}
+.dash-h{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line)}
+.dash-h .mono{color:var(--stone)}
+.dash-tabs{display:flex;gap:4px}
+.dash-tabs button{min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--stone-l);font:500 12px var(--mono);cursor:pointer}
+.dash-tabs button[aria-pressed="true"]{border-color:var(--blue);color:var(--marble)}
+.dash-row{display:grid;grid-template-columns:150px 1fr 90px;gap:18px;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line);font-size:14px}
+.dash-row:last-child{border-bottom:0}
+.bar{height:6px;background:var(--ink-3);position:relative;border-radius:1px;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--stone-d);transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.dash-row.top .bar i{background:var(--blue);box-shadow:0 0 8px rgba(51,85,255,.7)}
+.dash-row .val{font-family:var(--mono);font-size:13px;color:var(--stone-l);text-align:right}
+.dash-foot{padding:12px 22px;font-size:13px;color:var(--stone)}
+
+/* заявка */
+.cta{position:relative;padding:120px 0}
+.cta>.laser{position:absolute;left:0;right:0;top:0}
+.cta-grid{display:grid;grid-template-columns:1fr 520px;gap:64px;align-items:start}
+.cta h2{font-size:clamp(32px,3.2vw,44px);margin:14px 0 20px}
+.cta-txt>p{color:var(--stone-l);font-size:17px;max-width:520px}
+.cta-txt .mono{color:var(--stone-l)}
+.formula{margin-top:44px;font-family:var(--serif);font-size:34px;color:var(--blue-l)}
+.cta-list{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.cta-list li{display:grid;grid-template-columns:40px 1fr;font-size:16px;color:#D9D6CF}
+.cta-list li span{font-family:var(--mono);font-size:13px;color:var(--blue-l);padding-top:2px}
+.form{background:var(--marble);color:var(--ink);padding:36px;border-radius:2px;display:flex;flex-direction:column;gap:18px}
+.form h3{font-size:28px}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld label{font-size:13px;font-weight:600;color:#3F3C37}
+.fld input,.fld select{min-height:50px;padding:0 14px;border:1px solid #BDB8AE;border-radius:2px;background:#fff;color:var(--ink);font:16px var(--sans)}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(51,85,255,.18)}
+.form .btn{width:100%}
+.form small{font-size:12px;line-height:1.5;color:var(--stone-d)}
+.form-msg{display:none;padding:14px 16px;border:1px solid var(--blue);border-radius:2px;font-size:14px;color:var(--ink);background:#fff}
+.form.sent .form-msg{display:block}
+
+/* подвал */
+.ftr{border-top:1px solid var(--line);padding:56px 0 36px;color:var(--stone-l);font-size:14px}
+.ftr-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.ftr .logo{font-size:22px;color:var(--marble)}
+.ftr p{margin-top:14px;max-width:320px}
+.ftr h4{margin:0 0 14px;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--stone)}
+.ftr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ftr a{text-decoration:none}.ftr a:hover{color:var(--marble)}
+.ftr-b{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--stone)}
+
+/* появление */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .scan{display:none}.rv{opacity:1;transform:none;transition:none}
+  .steps .laser{transition:none}html{scroll-behavior:auto}
+}
+
+@media (max-width:1100px){
+  .nav,.hdr-cta{display:none}
+  .burger{display:inline-flex}
+  .mnav{display:none;position:fixed;inset:76px 0 0;z-index:49;background:var(--ink);padding:24px var(--pad);flex-direction:column;gap:4px;overflow:auto}
+  .mnav.open{display:flex}
+  .mnav a{font-family:var(--serif);font-size:28px;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line)}
+  .mnav .btn{margin-top:24px;font-family:var(--sans);font-size:15px;border:0}
+  .ax,.rep,.cta-grid{grid-template-columns:1fr;gap:48px}
+  .ax-photo{min-height:440px}
+  .svc{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr 1fr;row-gap:40px}
+  .steps::before,.steps .laser{display:none}
+  .cases{grid-template-columns:1fr 1fr}
+  .rep-photo{aspect-ratio:4/3}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  .sec{padding:80px 0}
+  .sec-head{grid-template-columns:1fr;gap:10px;margin-bottom:36px}
+  .sec-head .mono{padding-top:0}
+  .hero{display:block;min-height:0}
+  .hero-img{position:relative;height:auto;aspect-ratio:4/3;object-position:82% 40%}
+  .hero::after{display:none}
+  .scan{display:none}
+  .hero .wrap{padding-top:32px;padding-bottom:40px}
+  .hero-coord{display:none}
+  .chan{position:relative}
+  .chan .wrap{gap:8px 20px}
+  .hdr .wrap{height:64px}
+  .mnav{inset:64px 0 0}
+  .hero{padding-top:64px}
+  .svc{grid-template-columns:1fr}
+  .svc a{min-height:0}
+  .steps{grid-template-columns:1fr}
+  .cases{grid-template-columns:1fr}
+  .ax-item{grid-template-columns:52px 1fr;gap:14px}
+  .ax-photo{min-height:360px}
+  .wide{height:auto;min-height:0}
+  .wide img{position:relative;height:auto;aspect-ratio:16/9}
+  .wide::before{display:none}
+  .wide .wrap{padding-top:32px;padding-bottom:56px}
+  .wide .coord{display:none}
+  .dash-row{grid-template-columns:110px 1fr 70px;gap:12px;padding:12px 16px}
+  .dash-h{flex-direction:column;align-items:flex-start;gap:10px;padding:14px 16px}
+  .form{padding:24px}
+  .cta{padding:80px 0}
+  .ftr-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="ГНОМОН, на главную">ГНОМОН</a>
+    <nav class="nav" aria-label="Основное меню">
+      <a href="#method">Метод</a>
+      <a href="#services">Услуги</a>
+      <a href="#process">Как работаем</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#report">Отчётность</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="btn btn-blue hdr-cta" href="#contact">Получить аудит</a>
+    <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mnav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Мобильное меню">
+  <a href="#method">Метод</a>
+  <a href="#services">Услуги</a>
+  <a href="#process">Как работаем</a>
+  <a href="#cases">Кейсы</a>
+  <a href="#report">Отчётность</a>
+  <a href="#contact">Контакты</a>
+  <a class="btn btn-blue" href="#contact">Получить аудит</a>
+</nav>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <img class="hero-img" src="img/bust.jpg" alt="Мраморный бюст греческого философа на ультрамариновом фоне, лицо пересекает лазерная линия" width="2200" height="1228" fetchpriority="high">
+    <div class="scan" aria-hidden="true"></div>
+    <span class="coord hero-coord" aria-hidden="true">[ X 00 · Y 00 ]</span>
+    <div class="wrap">
+      <div class="hero-txt">
+        <span class="mono">Агентство перформанс-маркетинга</span>
+        <h1 id="h1">Маркетинг<br>как теорема</h1>
+        <p class="lead">Считаем экономику заявки до запуска, настраиваем сквозную аналитику и масштабируем только то, что доказало окупаемость.</p>
+        <div class="hero-btns">
+          <a class="btn btn-marble" href="#contact">Получить аудит</a>
+          <a class="btn btn-line" href="#cases">Смотреть кейсы</a>
+        </div>
+      </div>
+    </div>
+    <div class="chan" aria-label="Каналы">
+      <div class="wrap">
+        <span>Каналы:</span>
+        <span>Яндекс Директ</span>
+        <span>VK Реклама</span>
+        <span>Telegram Ads</span>
+        <span>Авито</span>
+        <span>Маркетплейсы</span>
+        <span>SEO</span>
+        <span>Сквозная аналитика</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec light" id="method" aria-labelledby="h-method">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="mono">01 / Метод</span>
+        <div>
+          <h2 id="h-method">Три аксиомы, на которых строится реклама</h2>
+          <p>Гномоном пифагорейцы проверяли прямой угол. Мы так же проверяем каждое решение в рекламе: цифрами, а не ощущениями.</p>
+        </div>
+      </div>
+      <div class="ax">
+        <div class="ax-list">
+          <div class="ax-item rv">
+            <span class="num">I</span>
+            <div><h3>Сначала экономика</h3><p>До запуска считаем допустимую цену заявки и продажи из вашей маржи, среднего чека и конверсии отдела продаж.</p></div>
+          </div>
+          <div class="ax-item rv">
+            <span class="num">II</span>
+            <div><h3>Всё измеримо</h3><p>Связываем рекламу, сайт, CRM и звонки. Видно, какой канал и какое объявление принесли деньги, а не только клики.</p></div>
+          </div>
+          <div class="ax-item rv">
+            <span class="num">III</span>
+            <div><h3>Масштабируем доказанное</h3><p>Бюджет растёт только в связках, которые окупились на тесте. Остальное отключаем без сожалений.</p></div>
+          </div>
+        </div>
+        <figure class="ax-photo visor rv" style="margin:0"><span class="v2"></span>
+          <img src="img/hand.jpg" alt="Мраморная ладонь статуи, на пальцах светятся синие точки трекинга, соединённые линиями" width="1200" height="1490" loading="lazy">
+          <span class="coord" aria-hidden="true">[ X 12 · Y 07 ] трекинг</span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services" aria-labelledby="h-svc">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="mono">02 / Услуги</span>
+        <div>
+          <h2 id="h-svc">Каналы, которые отвечают за заявки</h2>
+          <p>Берём канал целиком: стратегия, запуск, креативы, аналитика и еженедельная оптимизация.</p>
+        </div>
+      </div>
+      <div class="svc rv">
+        <a href="#contact"><span class="mono">01</span><h3>Контекстная реклама</h3><p>Яндекс Директ: поиск, РСЯ, товарные кампании. Структура под маржинальность, а не под охват.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><span class="mono">02</span><h3>Таргетированная реклама</h3><p>VK Реклама и Telegram Ads. Сегменты, лид-формы и прогрев для длинных сделок.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><span class="mono">03</span><h3>Авито и маркетплейсы</h3><p>Продвижение объявлений и карточек, внутренняя реклама площадок, контроль ДРР.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><span class="mono">04</span><h3>Сквозная аналитика</h3><p>Связка рекламы, сайта, звонков и CRM. Дашборд с ценой заявки и продажи по каждому каналу.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><span class="mono">05</span><h3>Креативы и посадочные</h3><p>Баннеры, видео и лендинги под гипотезы. Тестируем пачками, оставляем победителей.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><span class="mono">06</span><h3>SEO</h3><p>Органический трафик как второй канал, который со временем снижает среднюю цену заявки.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wide" aria-labelledby="h-wide">
+    <img src="img/hall.jpg" alt="Мраморная статуя философа в коридоре дата-центра между стойками серверов с синими огнями" width="2200" height="943" loading="lazy">
+    <span class="coord" aria-hidden="true">[ X 04 · Y 21 ]</span>
+    <div class="wrap">
+      <h2 id="h-wide" class="rv">Система,<br>а не удача</h2>
+      <p class="rv">Каждое решение записано в модели: почему растёт ставка, почему отключён креатив, сколько стоит продажа в каждом канале.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="process" aria-labelledby="h-proc">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="mono">03 / Как работаем</span>
+        <div><h2 id="h-proc">Пять шагов от аудита до масштаба</h2></div>
+      </div>
+      <div class="steps" id="steps">
+        <div class="laser" aria-hidden="true"></div>
+        <div class="step rv"><span class="mono">Шаг 01</span><h3>Аудит</h3><p>Разбираем текущую рекламу, аналитику и воронку продаж. Находим, где теряются деньги.</p></div>
+        <div class="step rv"><span class="mono">Шаг 02</span><h3>Модель</h3><p>Считаем юнит-экономику и целевую цену заявки. Выбираем каналы и гипотезы.</p></div>
+        <div class="step rv"><span class="mono">Шаг 03</span><h3>Запуск</h3><p>Настраиваем аналитику, собираем кампании и креативы, запускаем тест.</p></div>
+        <div class="step rv"><span class="mono">Шаг 04</span><h3>Оптимизация</h3><p>Каждую неделю отключаем слабое, усиливаем сильное, обновляем креативы.</p></div>
+        <div class="step rv"><span class="mono">Шаг 05</span><h3>Масштаб</h3><p>Увеличиваем бюджет в окупаемых связках и выходим в новые каналы.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec light" id="cases" aria-labelledby="h-cases">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="mono">04 / Кейсы</span>
+        <div>
+          <h2 id="h-cases">Результаты в цифрах клиента</h2>
+          <p>Показываем то, что видно в CRM: стоимость заявки, стоимость продажи и окупаемость рекламы.</p>
+        </div>
+      </div>
+      <div class="cases">
+        <a class="case rv" href="#contact">
+          <div class="case-top"><span class="mono">E-commerce · [КЛИЕНТ]</span><h3>Интернет-магазин</h3><p>[Задача клиента и что сделали — две строки.]</p></div>
+          <div class="case-m"><div><b class="acc">[ЦИФРА]</b><span>ROMI</span></div><div><b>[ЦИФРА]</b><span>Цена заказа</span></div></div>
+        </a>
+        <a class="case rv" href="#contact">
+          <div class="case-top"><span class="mono">Недвижимость · [КЛИЕНТ]</span><h3>Застройщик</h3><p>[Задача клиента и что сделали — две строки.]</p></div>
+          <div class="case-m"><div><b class="acc">[ЦИФРА]</b><span>Цена заявки</span></div><div><b>[ЦИФРА]</b><span>Заявок в месяц</span></div></div>
+        </a>
+        <a class="case rv" href="#contact">
+          <div class="case-top"><span class="mono">Образование · [КЛИЕНТ]</span><h3>Онлайн-школа</h3><p>[Задача клиента и что сделали — две строки.]</p></div>
+          <div class="case-m"><div><b class="acc">[ЦИФРА]</b><span>Цена продажи</span></div><div><b>[ЦИФРА]</b><span>Окупаемость</span></div></div>
+        </a>
+      </div>
+      <p class="cases-note">Ниши показаны для примера, цифры подставляются из реальных кейсов агентства.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="report" aria-labelledby="h-rep">
+    <div class="wrap rep">
+      <figure class="rep-photo visor rv" style="margin:0"><span class="v2"></span>
+        <img src="img/head.jpg" alt="Мраморная голова в профиль, внутри видны алюминиевые слои и синие дорожки микросхем" width="1200" height="1586" loading="lazy">
+        <span class="coord" aria-hidden="true">[ X 31 · Y 09 ] расчёт</span>
+      </figure>
+      <div class="rep-txt rv">
+        <span class="mono">05 / Отчётность</span>
+        <h2 id="h-rep">Отчёт, который понятен собственнику</h2>
+        <p>Раз в неделю — короткая сводка: сколько потратили, сколько заявок и продаж, что изменили и почему. Доступ к дашборду открыт всё время.</p>
+        <div class="dash" aria-label="Пример дашборда">
+          <div class="dash-h">
+            <span class="mono">Цена продажи по каналам</span>
+            <div class="dash-tabs" role="group" aria-label="Период">
+              <button type="button" data-p="0" aria-pressed="true">Неделя</button>
+              <button type="button" data-p="1" aria-pressed="false">Месяц</button>
+              <button type="button" data-p="2" aria-pressed="false">Квартал</button>
+            </div>
+          </div>
+          <div class="dash-row top"><span>Яндекс Директ</span><span class="bar"><i style="width:82%"></i></span><span class="val">[ЦИФРА]</span></div>
+          <div class="dash-row"><span>VK Реклама</span><span class="bar"><i style="width:58%"></i></span><span class="val">[ЦИФРА]</span></div>
+          <div class="dash-row"><span>Telegram Ads</span><span class="bar"><i style="width:44%"></i></span><span class="val">[ЦИФРА]</span></div>
+          <div class="dash-row"><span>Авито</span><span class="bar"><i style="width:36%"></i></span><span class="val">[ЦИФРА]</span></div>
+          <div class="dash-row"><span>SEO</span><span class="bar"><i style="width:27%"></i></span><span class="val">[ЦИФРА]</span></div>
+          <p class="dash-foot">Длина полос условная, значения подставляются из аналитики клиента.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact" aria-labelledby="h-cta">
+    <div class="laser" aria-hidden="true"></div>
+    <div class="wrap cta-grid">
+      <div class="cta-txt rv">
+        <span class="mono">06 / Аудит</span>
+        <h2 id="h-cta">Проверим вашу рекламу на прочность</h2>
+        <p>Посмотрим кабинеты, аналитику и воронку. Через [СРОК] пришлём разбор: где теряется бюджет и что изменить в первую очередь.</p>
+        <ul class="cta-list">
+          <li><span>01</span>Разбор кампаний и настроек</li>
+          <li><span>02</span>Проверка аналитики и целей</li>
+          <li><span>03</span>Расчёт целевой цены заявки</li>
+          <li><span>04</span>План на первый месяц</li>
+        </ul>
+        <p class="formula" aria-hidden="true">a² + b² = ROI</p>
+      </div>
+      <form class="form rv" id="form" novalidate>
+        <h3>Заявка на аудит</h3>
+        <div class="fld"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="fld"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" autocomplete="tel" required></div>
+        <div class="fld"><label for="f-site">Сайт компании</label><input id="f-site" name="site" type="url" inputmode="url" placeholder="https://"></div>
+        <div class="fld"><label for="f-budget">Рекламный бюджет в месяц</label>
+          <select id="f-budget" name="budget">
+            <option>до [СУММА] ₽</option>
+            <option>[СУММА]–[СУММА] ₽</option>
+            <option>от [СУММА] ₽</option>
+            <option>Пока не знаю</option>
+          </select>
+        </div>
+        <button class="btn btn-blue" type="submit">Отправить заявку</button>
+        <p class="form-msg" role="status">Это концепт: заявка никуда не отправляется. На рабочем сайте здесь будет подтверждение.</p>
+        <small>Нажимая кнопку, вы соглашаетесь с [политикой обработки персональных данных].</small>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a class="logo" href="#top">ГНОМОН</a>
+        <p>Агентство перформанс-маркетинга. Реклама, которая считается до запуска и окупается после.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul><li><a href="#services">Контекст</a></li><li><a href="#services">Таргет</a></li><li><a href="#services">Аналитика</a></li><li><a href="#services">SEO</a></li></ul>
+      </div>
+      <div>
+        <h4>Агентство</h4>
+        <ul><li><a href="#method">Метод</a></li><li><a href="#cases">Кейсы</a></li><li><a href="#process">Как работаем</a></li></ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul><li>[ТЕЛЕФОН]</li><li>[EMAIL]</li><li>[АДРЕС]</li><li>[TELEGRAM]</li></ul>
+      </div>
+    </div>
+    <div class="ftr-b">
+      <span>© [ГОД] ГНОМОН · [РЕКВИЗИТЫ]</span>
+      <span>Концепт. Изображения сгенерированы, на рабочем сайте их заменяют.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  function onScroll(){hdr.classList.toggle('solid',scrollY>40);}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var b=document.getElementById('burger'),m=document.getElementById('mnav');
+  function setMenu(open){m.classList.toggle('open',open);b.setAttribute('aria-expanded',open);b.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');hdr.classList.toggle('solid',open||scrollY>40);}
+  b.addEventListener('click',function(){setMenu(!m.classList.contains('open'));});
+  m.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
+
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15}):null;
+  document.querySelectorAll('.rv,#steps').forEach(function(el){io?io.observe(el):el.classList.add('in');});
+
+  // Переключатель периода в примере дашборда: меняет длину полос
+  var W=[[82,58,44,36,27],[74,63,40,45,31],[68,55,48,41,38]];
+  var tabs=document.querySelectorAll('.dash-tabs button'),bars=document.querySelectorAll('.dash-row .bar i'),rows=document.querySelectorAll('.dash-row');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    var p=+t.dataset.p,max=Math.max.apply(null,W[p]);
+    tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t);});
+    bars.forEach(function(bar,i){bar.style.width=W[p][i]+'%';rows[i].classList.toggle('top',W[p][i]===max);});
+  });});
+
+  var f=document.getElementById('form');
+  f.addEventListener('submit',function(e){e.preventDefault();f.classList.add('sent');});
+})();
+</script>
+</body>
+</html>
