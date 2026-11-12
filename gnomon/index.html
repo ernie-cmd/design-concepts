@@ -104,7 +104,6 @@ p{margin:0}
 .svc a::after{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--blue);box-shadow:0 0 10px 1px rgba(51,85,255,.65);transform:scaleX(0);transform-origin:left;transition:transform .35s}
 .svc a:hover{background:var(--ink-2)}
 .svc a:hover::after{transform:scaleX(1)}
-.svc .mono{color:var(--stone)}
 .svc h3{font-size:26px}
 .svc p{color:var(--stone-l);font-size:15px}
 .svc .go{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--marble)}
@@ -127,8 +126,7 @@ p{margin:0}
 .steps.in .laser{width:100%}
 .step{position:relative;padding-top:40px}
 .step::before{content:"";position:absolute;left:0;top:0;width:15px;height:15px;border:1px solid var(--blue);background:var(--ink);transform:rotate(45deg) scale(.75)}
-.step .mono{color:var(--stone)}
-.step h3{font-size:24px;margin:10px 0 10px}
+.step h3{font-size:24px;margin:0 0 10px}
 .step p{color:var(--stone-l);font-size:15px}
 
 /* кейсы */
@@ -176,8 +174,8 @@ p{margin:0}
 .cta-txt>p{color:var(--stone-l);font-size:17px;max-width:520px}
 .formula{margin-top:44px;font-family:var(--serif);font-size:34px;color:var(--blue-l)}
 .cta-list{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
-.cta-list li{display:grid;grid-template-columns:40px 1fr;font-size:16px;color:#D9D6CF}
-.cta-list li span{font-family:var(--mono);font-size:13px;color:var(--blue-l);padding-top:2px}
+.cta-list li{position:relative;padding-left:26px;font-size:16px;color:#D9D6CF}
+.cta-list li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border:1px solid var(--blue-l);transform:rotate(45deg)}
 .form{background:var(--marble);color:var(--ink);padding:36px;border-radius:2px;display:flex;flex-direction:column;gap:18px}
 .form h3{font-size:28px}
 .fld{display:flex;flex-direction:column;gap:6px}
@@ -290,7 +288,6 @@ p{margin:0}
   <section class="hero" aria-labelledby="h1">
     <img class="hero-img" src="img/bust.jpg" alt="Мраморный бюст греческого философа на ультрамариновом фоне, лицо пересекает лазерная линия" width="2200" height="1228" fetchpriority="high">
     <div class="scan" aria-hidden="true"></div>
-    <span class="coord hero-coord" aria-hidden="true">[ X 00 · Y 00 ]</span>
     <div class="wrap">
       <div class="hero-txt">
         <span class="mono">Агентство перформанс-маркетинга</span>
@@ -321,7 +318,7 @@ p{margin:0}
       <div class="sec-head rv">
         <div>
           <h2 id="h-method">Метод</h2>
-          <p>Гномоном пифагорейцы проверяли прямой угол. Мы так же проверяем каждое решение в рекламе: цифрами, а не ощущениями.</p>
+          <p>Три аксиомы, на которых строится реклама. Гномоном пифагорейцы проверяли прямой угол. Мы так же проверяем каждое решение в рекламе: цифрами, а не ощущениями.</p>
         </div>
       </div>
       <div class="ax">
@@ -341,7 +338,6 @@ p{margin:0}
         </div>
         <figure class="ax-photo visor rv" style="margin:0"><span class="v2"></span>
           <img src="img/hand.jpg" alt="Мраморная ладонь статуи, на пальцах светятся синие точки трекинга, соединённые линиями" width="1200" height="1490" loading="lazy">
-          <span class="coord" aria-hidden="true">[ X 12 · Y 07 ] трекинг</span>
         </figure>
       </div>
     </div>
@@ -352,23 +348,22 @@ p{margin:0}
       <div class="sec-head rv">
         <div>
           <h2 id="h-svc">Услуги</h2>
-          <p>Берём канал целиком: стратегия, запуск, креативы, аналитика и еженедельная оптимизация.</p>
+          <p>Каналы, которые отвечают за заявки. Берём канал целиком: стратегия, запуск, креативы, аналитика и еженедельная оптимизация.</p>
         </div>
       </div>
       <div class="svc rv">
-        <a href="#contact"><span class="mono">01</span><h3>Контекстная реклама</h3><p>Яндекс Директ: поиск, РСЯ, товарные кампании. Структура под маржинальность, а не под охват.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="#contact"><span class="mono">02</span><h3>Таргетированная реклама</h3><p>VK Реклама и Telegram Ads. Сегменты, лид-формы и прогрев для длинных сделок.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="#contact"><span class="mono">03</span><h3>Авито и маркетплейсы</h3><p>Продвижение объявлений и карточек, внутренняя реклама площадок, контроль ДРР.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="#contact"><span class="mono">04</span><h3>Сквозная аналитика</h3><p>Связка рекламы, сайта, звонков и CRM. Дашборд с ценой заявки и продажи по каждому каналу.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="#contact"><span class="mono">05</span><h3>Креативы и посадочные</h3><p>Баннеры, видео и лендинги под гипотезы. Тестируем пачками, оставляем победителей.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="#contact"><span class="mono">06</span><h3>SEO</h3><p>Органический трафик как второй канал, который со временем снижает среднюю цену заявки.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><h3>Контекстная реклама</h3><p>Яндекс Директ: поиск, РСЯ, товарные кампании. Структура под маржинальность, а не под охват.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><h3>Таргетированная реклама</h3><p>VK Реклама и Telegram Ads. Сегменты, лид-формы и прогрев для длинных сделок.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><h3>Авито и маркетплейсы</h3><p>Продвижение объявлений и карточек, внутренняя реклама площадок, контроль ДРР.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><h3>Сквозная аналитика</h3><p>Связка рекламы, сайта, звонков и CRM. Дашборд с ценой заявки и продажи по каждому каналу.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><h3>Креативы и посадочные</h3><p>Баннеры, видео и лендинги под гипотезы. Тестируем пачками, оставляем победителей.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact"><h3>SEO</h3><p>Органический трафик как второй канал, который со временем снижает среднюю цену заявки.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
   </section>
 
   <section class="wide" aria-labelledby="h-wide">
     <img src="img/hall.jpg" alt="Мраморная статуя философа в коридоре дата-центра между стойками серверов с синими огнями" width="2200" height="943" loading="lazy">
-    <span class="coord" aria-hidden="true">[ X 04 · Y 21 ]</span>
     <div class="wrap">
       <h2 id="h-wide" class="rv">Система,<br>а не удача</h2>
       <p class="rv">Каждое решение записано в модели: почему растёт ставка, почему отключён креатив, сколько стоит продажа в каждом канале.</p>
@@ -378,15 +373,15 @@ p{margin:0}
   <section class="sec" id="process" aria-labelledby="h-proc">
     <div class="wrap">
       <div class="sec-head rv">
-        <div><h2 id="h-proc">Как работаем</h2></div>
+        <div><h2 id="h-proc">Как работаем</h2><p>Пять шагов от аудита до масштаба.</p></div>
       </div>
       <div class="steps" id="steps">
         <div class="laser" aria-hidden="true"></div>
-        <div class="step rv"><span class="mono">Шаг 01</span><h3>Аудит</h3><p>Разбираем текущую рекламу, аналитику и воронку продаж. Находим, где теряются деньги.</p></div>
-        <div class="step rv"><span class="mono">Шаг 02</span><h3>Модель</h3><p>Считаем юнит-экономику и целевую цену заявки. Выбираем каналы и гипотезы.</p></div>
-        <div class="step rv"><span class="mono">Шаг 03</span><h3>Запуск</h3><p>Настраиваем аналитику, собираем кампании и креативы, запускаем тест.</p></div>
-        <div class="step rv"><span class="mono">Шаг 04</span><h3>Оптимизация</h3><p>Каждую неделю отключаем слабое, усиливаем сильное, обновляем креативы.</p></div>
-        <div class="step rv"><span class="mono">Шаг 05</span><h3>Масштаб</h3><p>Увеличиваем бюджет в окупаемых связках и выходим в новые каналы.</p></div>
+        <div class="step rv"><h3>Аудит</h3><p>Разбираем текущую рекламу, аналитику и воронку продаж. Находим, где теряются деньги.</p></div>
+        <div class="step rv"><h3>Модель</h3><p>Считаем юнит-экономику и целевую цену заявки. Выбираем каналы и гипотезы.</p></div>
+        <div class="step rv"><h3>Запуск</h3><p>Настраиваем аналитику, собираем кампании и креативы, запускаем тест.</p></div>
+        <div class="step rv"><h3>Оптимизация</h3><p>Каждую неделю отключаем слабое, усиливаем сильное, обновляем креативы.</p></div>
+        <div class="step rv"><h3>Масштаб</h3><p>Увеличиваем бюджет в окупаемых связках и выходим в новые каналы.</p></div>
       </div>
     </div>
   </section>
@@ -396,7 +391,7 @@ p{margin:0}
       <div class="sec-head rv">
         <div>
           <h2 id="h-cases">Кейсы</h2>
-          <p>Показываем то, что видно в CRM: стоимость заявки, стоимость продажи и окупаемость рекламы.</p>
+          <p>Результаты в цифрах клиента. Показываем то, что видно в CRM: стоимость заявки, стоимость продажи и окупаемость рекламы.</p>
         </div>
       </div>
       <div class="cases">
@@ -421,11 +416,10 @@ p{margin:0}
     <div class="wrap rep">
       <figure class="rep-photo visor rv" style="margin:0"><span class="v2"></span>
         <img src="img/head.jpg" alt="Мраморная голова в профиль, внутри видны алюминиевые слои и синие дорожки микросхем" width="1200" height="1586" loading="lazy">
-        <span class="coord" aria-hidden="true">[ X 31 · Y 09 ] расчёт</span>
       </figure>
       <div class="rep-txt rv">
         <h2 id="h-rep">Отчётность</h2>
-        <p>Раз в неделю — короткая сводка: сколько потратили, сколько заявок и продаж, что изменили и почему. Доступ к дашборду открыт всё время.</p>
+        <p>Отчёт, который понятен собственнику. Раз в неделю — короткая сводка: сколько потратили, сколько заявок и продаж, что изменили и почему. Доступ к дашборду открыт всё время.</p>
         <div class="dash" aria-label="Пример дашборда">
           <div class="dash-h">
             <span class="mono">Цена продажи по каналам</span>
@@ -451,12 +445,12 @@ p{margin:0}
     <div class="wrap cta-grid">
       <div class="cta-txt rv">
         <h2 id="h-cta">Аудит рекламы</h2>
-        <p>Посмотрим кабинеты, аналитику и воронку. Через [СРОК] пришлём разбор: где теряется бюджет и что изменить в первую очередь.</p>
+        <p>Проверим вашу рекламу на прочность: посмотрим кабинеты, аналитику и воронку. Через [СРОК] пришлём разбор: где теряется бюджет и что изменить в первую очередь.</p>
         <ul class="cta-list">
-          <li><span>01</span>Разбор кампаний и настроек</li>
-          <li><span>02</span>Проверка аналитики и целей</li>
-          <li><span>03</span>Расчёт целевой цены заявки</li>
-          <li><span>04</span>План на первый месяц</li>
+          <li>Разбор кампаний и настроек</li>
+          <li>Проверка аналитики и целей</li>
+          <li>Расчёт целевой цены заявки</li>
+          <li>План на первый месяц</li>
         </ul>
         <p class="formula" aria-hidden="true">a² + b² = ROI</p>
       </div>
