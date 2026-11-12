@@ -80,12 +80,11 @@ p{margin:0}
 
 /* секции */
 .sec{padding:120px 0}
-.sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:56px;align-items:start}
-.sec-head .mono{color:var(--stone-l);padding-top:12px}
+.sec-head{margin-bottom:56px}
 .sec h2{font-size:clamp(32px,3.2vw,42px);max-width:720px}
 .sec-head p{margin-top:16px;max-width:620px;color:var(--stone-l);font-size:17px}
 .light{background:var(--marble);color:var(--ink)}
-.light .sec-head .mono,.light .sec-head p{color:var(--stone-d)}
+.light .sec-head p{color:var(--stone-d)}
 
 /* аксиомы */
 .ax{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
@@ -153,9 +152,8 @@ p{margin:0}
 .rep-photo{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--ink-2);border-radius:2px}
 .rep-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 40%}
 .rep-photo .coord{left:36px;bottom:30px}
-.rep-txt h2{font-size:clamp(32px,3.2vw,42px);margin:14px 0 18px}
+.rep-txt h2{font-size:clamp(32px,3.2vw,42px);margin:0 0 18px}
 .rep-txt>p{color:var(--stone-l);font-size:17px;max-width:560px}
-.rep-txt .mono{color:var(--stone-l)}
 .dash{margin-top:36px;border:1px solid var(--line);border-radius:2px;background:var(--ink-2)}
 .dash-h{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line)}
 .dash-h .mono{color:var(--stone)}
@@ -174,9 +172,8 @@ p{margin:0}
 .cta{position:relative;padding:120px 0}
 .cta>.laser{position:absolute;left:0;right:0;top:0}
 .cta-grid{display:grid;grid-template-columns:1fr 520px;gap:64px;align-items:start}
-.cta h2{font-size:clamp(32px,3.2vw,44px);margin:14px 0 20px}
+.cta h2{font-size:clamp(32px,3.2vw,44px);margin:0 0 20px}
 .cta-txt>p{color:var(--stone-l);font-size:17px;max-width:520px}
-.cta-txt .mono{color:var(--stone-l)}
 .formula{margin-top:44px;font-family:var(--serif);font-size:34px;color:var(--blue-l)}
 .cta-list{margin:28px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .cta-list li{display:grid;grid-template-columns:40px 1fr;font-size:16px;color:#D9D6CF}
@@ -229,8 +226,7 @@ p{margin:0}
 }
 @media (max-width:700px){
   .sec{padding:80px 0}
-  .sec-head{grid-template-columns:1fr;gap:10px;margin-bottom:36px}
-  .sec-head .mono{padding-top:0}
+  .sec-head{margin-bottom:36px}
   .hero{display:block;min-height:0}
   .hero-img{position:relative;height:auto;aspect-ratio:4/3;object-position:82% 40%}
   .hero::after{display:none}
@@ -323,9 +319,8 @@ p{margin:0}
   <section class="sec light" id="method" aria-labelledby="h-method">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="mono">01 / Метод</span>
         <div>
-          <h2 id="h-method">Три аксиомы, на которых строится реклама</h2>
+          <h2 id="h-method">Метод</h2>
           <p>Гномоном пифагорейцы проверяли прямой угол. Мы так же проверяем каждое решение в рекламе: цифрами, а не ощущениями.</p>
         </div>
       </div>
@@ -355,9 +350,8 @@ p{margin:0}
   <section class="sec" id="services" aria-labelledby="h-svc">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="mono">02 / Услуги</span>
         <div>
-          <h2 id="h-svc">Каналы, которые отвечают за заявки</h2>
+          <h2 id="h-svc">Услуги</h2>
           <p>Берём канал целиком: стратегия, запуск, креативы, аналитика и еженедельная оптимизация.</p>
         </div>
       </div>
@@ -384,8 +378,7 @@ p{margin:0}
   <section class="sec" id="process" aria-labelledby="h-proc">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="mono">03 / Как работаем</span>
-        <div><h2 id="h-proc">Пять шагов от аудита до масштаба</h2></div>
+        <div><h2 id="h-proc">Как работаем</h2></div>
       </div>
       <div class="steps" id="steps">
         <div class="laser" aria-hidden="true"></div>
@@ -401,9 +394,8 @@ p{margin:0}
   <section class="sec light" id="cases" aria-labelledby="h-cases">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="mono">04 / Кейсы</span>
         <div>
-          <h2 id="h-cases">Результаты в цифрах клиента</h2>
+          <h2 id="h-cases">Кейсы</h2>
           <p>Показываем то, что видно в CRM: стоимость заявки, стоимость продажи и окупаемость рекламы.</p>
         </div>
       </div>
@@ -432,8 +424,7 @@ p{margin:0}
         <span class="coord" aria-hidden="true">[ X 31 · Y 09 ] расчёт</span>
       </figure>
       <div class="rep-txt rv">
-        <span class="mono">05 / Отчётность</span>
-        <h2 id="h-rep">Отчёт, который понятен собственнику</h2>
+        <h2 id="h-rep">Отчётность</h2>
         <p>Раз в неделю — короткая сводка: сколько потратили, сколько заявок и продаж, что изменили и почему. Доступ к дашборду открыт всё время.</p>
         <div class="dash" aria-label="Пример дашборда">
           <div class="dash-h">
@@ -459,8 +450,7 @@ p{margin:0}
     <div class="laser" aria-hidden="true"></div>
     <div class="wrap cta-grid">
       <div class="cta-txt rv">
-        <span class="mono">06 / Аудит</span>
-        <h2 id="h-cta">Проверим вашу рекламу на прочность</h2>
+        <h2 id="h-cta">Аудит рекламы</h2>
         <p>Посмотрим кабинеты, аналитику и воронку. Через [СРОК] пришлём разбор: где теряется бюджет и что изменить в первую очередь.</p>
         <ul class="cta-list">
           <li><span>01</span>Разбор кампаний и настроек</li>
